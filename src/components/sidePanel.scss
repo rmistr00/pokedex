@@ -1,0 +1,16 @@
+#sidePanel{
+    background-color:gray;
+    position:fixed;
+    width:100px;
+    top:0;right:0;bottom:0;    
+    border-radius:30px 0 0 30px;
+    overflow: scroll;   
+
+}
+
+.pokemon-icon{
+    background: white;
+    height: 70px;width: 70px;
+    border-radius: 50%;
+    margin: 10px;
+}
