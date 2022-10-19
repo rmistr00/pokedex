@@ -1,16 +1,19 @@
 #sidePanel{
-    background-color:gray;
+    background-color:var(--red);
     position:fixed;
-    width:100px;
-    top:0;right:0;bottom:0;    
+    width:70px;
+    top:20px;right:0;bottom:100px;    
     border-radius:30px 0 0 30px;
-    overflow: scroll;   
-
+    overflow-y: scroll;   
+    overflow-x:hidden ;
+    box-shadow: var(--shadow);
 }
 
 .pokemon-icon{
     background: white;
-    height: 70px;width: 70px;
+    height: 50px;width: 50px;
     border-radius: 50%;
     margin: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
 }

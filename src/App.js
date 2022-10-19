@@ -1,8 +1,9 @@
 import logo from './logo.svg';
-import './App.css';
+import './app.scss';
 
 import {Sample} from "./data"
 import {SidePanel} from "./components/sidePanel"
+import {PokeCard} from "./components/pokeCard"
 
 function App() {
 
@@ -15,11 +16,11 @@ function App() {
 
   return (
     <div className="App">
-     {
-  // sprites
+
+  <PokeCard/>
   <SidePanel/>
-     }
-    </div>
+     
+         </div>
   );
 }
 
