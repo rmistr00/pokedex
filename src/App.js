@@ -1,24 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
+import './app.scss';
+
+import {Sample} from "./data"
+import {SidePanel} from "./components/sidePanel"
+import {PokeCard} from "./components/pokeCard"
 
 function App() {
+
+
+// let sprites=[...Array(3)].map((x,i)=>`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i+1}.png`).map(x => 
+// <img src={x}></img>
+// )
+
+// console.log(sprites)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  <PokeCard/>
+  <SidePanel/>
+     
+         </div>
   );
 }
 

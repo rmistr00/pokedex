@@ -1,0 +1,9 @@
+#pokeCard{
+    background: gray;
+    position: fixed;
+    top:20px;
+    height: 400px;
+    width:calc(100% - 150px);
+    border-radius: 0 30px 30px 0;
+    box-shadow: var(--shadow);
+}
