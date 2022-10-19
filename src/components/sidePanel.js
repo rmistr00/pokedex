@@ -9,7 +9,9 @@ export const SidePanel=()=>{
             {
                 [...Array(30)].map((x,i)=><motion.div 
                 initial={{ opacity: 0,x:50}} whileInView={{ opacity: 1,x:0}}
-                className='pokemon-icon'>{i+1}</motion.div>)
+                className='pokemon-icon'
+                key={i}
+                >{i+1}</motion.div>)
             }
         </div>
     )
