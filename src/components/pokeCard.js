@@ -2,6 +2,8 @@ import React from 'react'
 import "./pokeCard.scss"
 import { motion } from "framer-motion";
 
+import trainer from '../trainer.png';
+
 
 export const PokeCard=()=>{
 
@@ -14,6 +16,9 @@ console.log(pokeStats)
             <div id="poke-stats">
                 stats
                 {pokeStats}
+
+                <img src={trainer} id="poke-trainer"/>
+
             </div>
         </div>
     )
