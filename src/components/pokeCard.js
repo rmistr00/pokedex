@@ -1,25 +1,64 @@
-import React from 'react'
-import "./pokeCard.scss"
+import React, { useState, useEffect } from "react";
+import "./pokeCard.scss";
 import { motion } from "framer-motion";
 
-import trainer from '../trainer.png';
+import trainer from "../trainer.png";
 
+export const PokeCard = ({ pokemon }) => {
+  const [pokeData, setPokeData] = useState();
 
-export const PokeCard=()=>{
+  console.log(pokemon);
 
-let pokeStats=[...Array(6)].map((x,i)=><div className='poke-stat' key={i}>{i}</div>)
-console.log(pokeStats)
-    return(
-        <div id="pokeCard">
-            <div id="poke-name">name</div>
-            <div id="poke-img">img</div>
-            <div id="poke-stats">
-                stats
-                {pokeStats}
+  useEffect(() => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
 
-                <img src={trainer} id="poke-trainer"/>
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setPokeData(json);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
 
-            </div>
-        </div>
-    )
-}
+    fetchData();
+  }, []);
+
+  console.log(pokeData);
+
+  let height = (h) => {
+    if (h > 10) {
+      return (15 / h) * 100;
+    } else {
+      return 100;
+    }
+  };
+
+  return (
+    <div id="pokeCard" className="border">
+      <div id="poke-name">name</div>
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeData?.id}.png`}
+        id="poke-art"
+      />
+      <div id="poke-stats">
+        stats
+        {pokeData?.stats.map((x) => (
+          <div className="poke-stat" key={x.stat.name}>
+            {x.stat.name} {x.base_stat}
+          </div>
+        ))}
+      </div>
+      <img
+        src={trainer}
+        id="poke-trainer"
+        style={{ height: `${height(pokeData?.height)}px` }}
+      />
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeData?.id}.png`}
+        id="poke-size"
+      />
+    </div>
+  );
+};
