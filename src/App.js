@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import "./app.scss";
 
+import { useState } from "react";
+
 import { Sample } from "./data";
 import { SidePanel } from "./components/sidePanel";
 import { PokeCard } from "./components/pokeCard";
@@ -14,15 +16,17 @@ function App() {
 
   // console.log(sprites)
 
+  const [pokemon, setPokemon] = useState("typhlosion");
+
   return (
     <div className="App">
-      <PokeCard />
-      <SidePanel />
+      <PokeCard pokemon={pokemon} />
+      <SidePanel setPokemon={setPokemon} />
 
-      <div id="poke-search">
+      <div id="poke-search" className="border">
         <motion.div
           animate={{
-            scale: 3,
+            scale: 3.2,
             opacity: [0, 1, 0],
           }}
           transition={{
@@ -32,9 +36,9 @@ function App() {
         />
       </div>
 
-      <div id="poke-search-line" />
-      <div id="poke-card-line" />
-      <div id="side-panel-line" />
+      <div id="poke-search-line" className="border" />
+      <div id="poke-card-line" className="border" />
+      <div id="side-panel-line" className="border" />
     </div>
   );
 }

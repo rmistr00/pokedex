@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const SidePanel = () => {
   return (
-    <div id="sidePanel">
+    <div id="sidePanel" className="border">
       {[...Array(30)].map((x, i) => (
         <motion.div
           initial={{ opacity: 0, x: 50 }}
