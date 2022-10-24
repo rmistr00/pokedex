@@ -6,6 +6,7 @@ import trainer from "../trainer.png";
 
 export const PokeCard = ({ pokemon }) => {
   const [pokeData, setPokeData] = useState();
+  console.log(pokeData);
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
@@ -31,7 +32,6 @@ export const PokeCard = ({ pokemon }) => {
     }
   };
 
-  // console.log(pokeData);
   let stats = {
     hp: "hp",
     attack: "atk",
@@ -57,11 +57,10 @@ export const PokeCard = ({ pokemon }) => {
       </AnimatePresence>
       <div id="poke-stats">
         {pokeData?.stats.map((x, i) => (
-          <div className="poke-max-stat">
+          <div className="poke-max-stat" key={x.stat.name}>
             <div className="stat-name"> {stats[x.stat.name]}</div>
             <div
               className="poke-stat"
-              key={x.stat.name}
               style={{ width: `${(x.base_stat / 255) * 255}px` }}
             ></div>
           </div>

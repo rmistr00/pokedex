@@ -6,7 +6,7 @@ export const SidePanel = ({ pokemon, setPokemon }) => {
   const [pokemons, setPokemons] = useState();
 
   useEffect(() => {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=30`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=151`;
 
     const fetchData = async () => {
       try {
