@@ -1,0 +1,45 @@
+#loading {
+  color: white;
+  text-align: center;
+  #pokeball {
+    border-radius: 50%;
+    width: 150px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  #about {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+  }
+
+  #app-info {
+    font-size: 60px;
+    top: 40%;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  #start {
+    color: white;
+    border: 5px solid white;
+    background: #4caf50;
+    position: absolute;
+    bottom: 100px;
+    font-size: 30px;
+    margin: 60px;
+    border-radius: 30px;
+    font-family: var(--theme);
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: var(--shadow);
+    left: 0;
+    right: 0;
+  }
+}

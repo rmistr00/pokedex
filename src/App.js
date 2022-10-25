@@ -1,22 +1,24 @@
 import "./app.scss";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import Home from "./layers/home";
+import Loading from "./layers/loading";
 
 function App() {
-  // let sprites=[...Array(3)].map((x,i)=>`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i+1}.png`).map(x =>
-  // <img src={x}></img>
-  // )
+  const [layer, setLayer] = useState();
 
-  // console.log(sprites)
+  let layers = {
+    loading: <Loading setLayer={setLayer} />,
+    home: <Home />,
+  };
 
-  return (
-    <div className="App">
-      <Home />
-    </div>
-  );
+  useEffect(() => {
+    setLayer("loading");
+  }, []);
+
+  return <div className="App">{layers[layer]}</div>;
 }
 
 export default App;

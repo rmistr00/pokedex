@@ -10,6 +10,17 @@
   font-weight: bold;
   overflow: hidden;
 
+  #poke-type {
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    img {
+      box-shadow: var(--inset-shadow);
+      border-radius: 50%;
+      height: 40px;
+    }
+  }
+
   #poke-name {
     font-size: 1.5rem;
     margin: 10px;
@@ -37,6 +48,7 @@
       border-radius: 0 20px 20px 0;
       background: #4caf50;
       position: absolute;
+      box-shadow: var(--inset-shadow);
       height: 15px;
       top: 0;
     }
@@ -61,6 +73,7 @@
     right: 0;
     bottom: 150px;
     margin: 20px;
+    transition: 0.3s;
   }
   #poke-size {
     position: absolute;

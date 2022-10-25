@@ -25,7 +25,15 @@ export const SidePanel = ({ pokemon, setPokemon }) => {
     <div id="sidePanel" className="border">
       {pokemons?.map((x, i) => (
         <motion.div
-          onClick={() => setPokemon(x.name)}
+          onClick={() => {
+            var img = new Image();
+            img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
+              i + 1
+            }.png`;
+            img.onload = () => {
+              setPokemon(x.name);
+            };
+          }}
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           className={`pokemon-icon ${
@@ -34,6 +42,7 @@ export const SidePanel = ({ pokemon, setPokemon }) => {
           key={x.name}
         >
           <img
+            loading="lazy"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
               i + 1
             }.png`}
