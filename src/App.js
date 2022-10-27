@@ -5,13 +5,15 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Home from "./layers/home";
 import Loading from "./layers/loading";
+import Search from "./layers/search";
 
 function App() {
   const [layer, setLayer] = useState();
 
   let layers = {
     loading: <Loading setLayer={setLayer} />,
-    home: <Home />,
+    home: <Home setLayer={setLayer} />,
+    search: <Search setLayer={setLayer} />,
   };
 
   useEffect(() => {

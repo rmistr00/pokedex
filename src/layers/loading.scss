@@ -18,12 +18,23 @@
     right: 0;
   }
 
-  #app-info {
+  #app-name {
     font-size: 60px;
     top: 40%;
     position: absolute;
     left: 0;
     right: 0;
+    sub {
+      font-size: 20px;
+    }
+  }
+
+  #app-version {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    font-weight: bold;
   }
 
   #start {
@@ -31,7 +42,7 @@
     border: 5px solid white;
     background: #4caf50;
     position: absolute;
-    bottom: 100px;
+    bottom: 60px;
     font-size: 30px;
     margin: 60px;
     border-radius: 30px;

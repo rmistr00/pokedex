@@ -1,0 +1,29 @@
+#search {
+  .selected-type {
+    background: green;
+  }
+  .selected-stat {
+    background: green;
+  }
+  #poke-trainer {
+    height: 100px;
+    position: fixed;
+    bottom: 0px;
+    margin: 120px 90px;
+  }
+  #pokemons {
+    // position: absolute;
+    // top: 100px;
+    // box-shadow: var(--inset-shadow);
+    // left: 100px;
+    // width: 200px;
+    // bottom: 100px;
+    // overflow-y: scroll;
+    img {
+      position: fixed;
+      bottom: 0;
+      // display: block;
+      // margin: auto;
+    }
+  }
+}

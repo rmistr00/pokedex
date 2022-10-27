@@ -5,31 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import trainer from "../trainer.png";
 
 export const PokeCard = ({ pokemon }) => {
-  const [pokeData, setPokeData] = useState();
-
-  useEffect(() => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        setPokeData(json);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-
-    fetchData();
-  }, [pokemon]);
-
   let height = (h) => {
-    if (h >= 20) {
-      return (14 / h) * 100;
-    } else if (h >= 10) {
-      return (7 / h) * 100;
-    } else {
-      return 100;
+    if (h < 15) {
+      return 90;
+    }
+    if (h > 15) {
+      return 90 - (h - 15) * 7;
     }
   };
 
@@ -37,34 +18,36 @@ export const PokeCard = ({ pokemon }) => {
     hp: "hp",
     attack: "atk",
     defense: "def",
-    "special-attack": "s-atk",
-    "special-defense": "s-def",
+    "s-attack": "s-atk",
+    "s-defense": "s-def",
     speed: "spd",
   };
 
   return (
     <div id="pokeCard" className="border">
-      <div id="poke-type">
-        <img
-          src={`https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${pokeData?.types[0].type.name}.png`}
+      <div id="poke-type" key={`${pokemon?.name}-key`}>
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          src={`https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${pokemon?.type}.png`}
         />
       </div>
-      <div id="poke-name">{pokeData?.name}</div>
+      <div id="poke-name">{pokemon?.name}</div>
       <motion.img
         className="img-shadow"
-        key={pokemon}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeData?.id}.png`}
+        key={pokemon?.name}
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`}
         id="poke-art"
       />
       <div id="poke-stats">
-        {pokeData?.stats.map((x, i) => (
-          <div className="poke-max-stat" key={x.stat.name}>
-            <div className="stat-name"> {stats[x.stat.name]}</div>
+        {Object.keys(stats).map((s) => (
+          <div className="poke-max-stat" key={s}>
+            <div className="stat-name"> {stats[s]}</div>
             <div
               className="poke-stat"
-              style={{ width: `${(x.base_stat / 255) * 255}px` }}
+              style={{ width: `${(pokemon[s] / 255) * 255}px` }}
             ></div>
           </div>
         ))}
@@ -73,10 +56,10 @@ export const PokeCard = ({ pokemon }) => {
         src={trainer}
         id="poke-trainer"
         className="img-shadow"
-        style={{ height: `${height(pokeData?.height)}px` }}
+        style={{ height: `${height(pokemon?.height)}px` }}
       />
       <img
-        src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokeData?.name}.gif`}
+        src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon?.name.toLowerCase()}.gif`}
         id="poke-size"
       />
     </div>

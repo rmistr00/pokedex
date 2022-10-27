@@ -14,6 +14,11 @@
     position: absolute;
     right: 0;
     margin: 10px;
+    box-shadow: var(--inset-shadow);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
     img {
       box-shadow: var(--inset-shadow);
       border-radius: 50%;
@@ -66,7 +71,7 @@
     width: calc(100% - 80px);
     margin: 20px 40px;
     position: absolute;
-    top: 20px;
+    top: 30px;
   }
   #poke-trainer {
     position: absolute;
