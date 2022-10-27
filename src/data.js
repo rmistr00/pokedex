@@ -1,936 +1,1814 @@
-export const Sample= {
-  "abilities": [
-    {
-      "ability": {
-        "name": "limber",
-        "url": "https://pokeapi.co/api/v2/ability/7/"
-      },
-      "is_hidden": false,
-      "slot": 1
-    },
-    {
-      "ability": {
-        "name": "imposter",
-        "url": "https://pokeapi.co/api/v2/ability/150/"
-      },
-      "is_hidden": true,
-      "slot": 3
-    }
-  ],
-  "base_experience": 101,
-  "forms": [
-    {
-      "name": "ditto",
-      "url": "https://pokeapi.co/api/v2/pokemon-form/132/"
-    }
-  ],
-  "game_indices": [
-    {
-      "game_index": 76,
-      "version": {
-        "name": "red",
-        "url": "https://pokeapi.co/api/v2/version/1/"
-      }
-    },
-    {
-      "game_index": 76,
-      "version": {
-        "name": "blue",
-        "url": "https://pokeapi.co/api/v2/version/2/"
-      }
-    },
-    {
-      "game_index": 76,
-      "version": {
-        "name": "yellow",
-        "url": "https://pokeapi.co/api/v2/version/3/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "gold",
-        "url": "https://pokeapi.co/api/v2/version/4/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "silver",
-        "url": "https://pokeapi.co/api/v2/version/5/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "crystal",
-        "url": "https://pokeapi.co/api/v2/version/6/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "ruby",
-        "url": "https://pokeapi.co/api/v2/version/7/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "sapphire",
-        "url": "https://pokeapi.co/api/v2/version/8/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "emerald",
-        "url": "https://pokeapi.co/api/v2/version/9/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "firered",
-        "url": "https://pokeapi.co/api/v2/version/10/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "leafgreen",
-        "url": "https://pokeapi.co/api/v2/version/11/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "diamond",
-        "url": "https://pokeapi.co/api/v2/version/12/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "pearl",
-        "url": "https://pokeapi.co/api/v2/version/13/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "platinum",
-        "url": "https://pokeapi.co/api/v2/version/14/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "heartgold",
-        "url": "https://pokeapi.co/api/v2/version/15/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "soulsilver",
-        "url": "https://pokeapi.co/api/v2/version/16/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "black",
-        "url": "https://pokeapi.co/api/v2/version/17/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "white",
-        "url": "https://pokeapi.co/api/v2/version/18/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "black-2",
-        "url": "https://pokeapi.co/api/v2/version/21/"
-      }
-    },
-    {
-      "game_index": 132,
-      "version": {
-        "name": "white-2",
-        "url": "https://pokeapi.co/api/v2/version/22/"
-      }
-    }
-  ],
-  "height": 3,
-  "held_items": [
-    {
-      "item": {
-        "name": "metal-powder",
-        "url": "https://pokeapi.co/api/v2/item/234/"
-      },
-      "version_details": [
-        {
-          "rarity": 5,
-          "version": {
-            "name": "ruby",
-            "url": "https://pokeapi.co/api/v2/version/7/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "sapphire",
-            "url": "https://pokeapi.co/api/v2/version/8/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "emerald",
-            "url": "https://pokeapi.co/api/v2/version/9/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "firered",
-            "url": "https://pokeapi.co/api/v2/version/10/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "leafgreen",
-            "url": "https://pokeapi.co/api/v2/version/11/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "diamond",
-            "url": "https://pokeapi.co/api/v2/version/12/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "pearl",
-            "url": "https://pokeapi.co/api/v2/version/13/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "platinum",
-            "url": "https://pokeapi.co/api/v2/version/14/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "heartgold",
-            "url": "https://pokeapi.co/api/v2/version/15/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "soulsilver",
-            "url": "https://pokeapi.co/api/v2/version/16/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "black",
-            "url": "https://pokeapi.co/api/v2/version/17/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "white",
-            "url": "https://pokeapi.co/api/v2/version/18/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "black-2",
-            "url": "https://pokeapi.co/api/v2/version/21/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "white-2",
-            "url": "https://pokeapi.co/api/v2/version/22/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "x",
-            "url": "https://pokeapi.co/api/v2/version/23/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "y",
-            "url": "https://pokeapi.co/api/v2/version/24/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "omega-ruby",
-            "url": "https://pokeapi.co/api/v2/version/25/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "alpha-sapphire",
-            "url": "https://pokeapi.co/api/v2/version/26/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "sun",
-            "url": "https://pokeapi.co/api/v2/version/27/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "moon",
-            "url": "https://pokeapi.co/api/v2/version/28/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "ultra-sun",
-            "url": "https://pokeapi.co/api/v2/version/29/"
-          }
-        },
-        {
-          "rarity": 5,
-          "version": {
-            "name": "ultra-moon",
-            "url": "https://pokeapi.co/api/v2/version/30/"
-          }
-        }
-      ]
-    },
-    {
-      "item": {
-        "name": "quick-powder",
-        "url": "https://pokeapi.co/api/v2/item/251/"
-      },
-      "version_details": [
-        {
-          "rarity": 50,
-          "version": {
-            "name": "diamond",
-            "url": "https://pokeapi.co/api/v2/version/12/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "pearl",
-            "url": "https://pokeapi.co/api/v2/version/13/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "platinum",
-            "url": "https://pokeapi.co/api/v2/version/14/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "heartgold",
-            "url": "https://pokeapi.co/api/v2/version/15/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "soulsilver",
-            "url": "https://pokeapi.co/api/v2/version/16/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "black",
-            "url": "https://pokeapi.co/api/v2/version/17/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "white",
-            "url": "https://pokeapi.co/api/v2/version/18/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "black-2",
-            "url": "https://pokeapi.co/api/v2/version/21/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "white-2",
-            "url": "https://pokeapi.co/api/v2/version/22/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "x",
-            "url": "https://pokeapi.co/api/v2/version/23/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "y",
-            "url": "https://pokeapi.co/api/v2/version/24/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "omega-ruby",
-            "url": "https://pokeapi.co/api/v2/version/25/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "alpha-sapphire",
-            "url": "https://pokeapi.co/api/v2/version/26/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "sun",
-            "url": "https://pokeapi.co/api/v2/version/27/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "moon",
-            "url": "https://pokeapi.co/api/v2/version/28/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "ultra-sun",
-            "url": "https://pokeapi.co/api/v2/version/29/"
-          }
-        },
-        {
-          "rarity": 50,
-          "version": {
-            "name": "ultra-moon",
-            "url": "https://pokeapi.co/api/v2/version/30/"
-          }
-        }
-      ]
-    }
-  ],
-  "id": 132,
-  "is_default": true,
-  "location_area_encounters": "https://pokeapi.co/api/v2/pokemon/132/encounters",
-  "moves": [
-    {
-      "move": {
-        "name": "transform",
-        "url": "https://pokeapi.co/api/v2/move/144/"
-      },
-      "version_group_details": [
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "red-blue",
-            "url": "https://pokeapi.co/api/v2/version-group/1/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "yellow",
-            "url": "https://pokeapi.co/api/v2/version-group/2/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "gold-silver",
-            "url": "https://pokeapi.co/api/v2/version-group/3/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "crystal",
-            "url": "https://pokeapi.co/api/v2/version-group/4/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "ruby-sapphire",
-            "url": "https://pokeapi.co/api/v2/version-group/5/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "emerald",
-            "url": "https://pokeapi.co/api/v2/version-group/6/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "firered-leafgreen",
-            "url": "https://pokeapi.co/api/v2/version-group/7/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "diamond-pearl",
-            "url": "https://pokeapi.co/api/v2/version-group/8/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "platinum",
-            "url": "https://pokeapi.co/api/v2/version-group/9/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "heartgold-soulsilver",
-            "url": "https://pokeapi.co/api/v2/version-group/10/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "black-white",
-            "url": "https://pokeapi.co/api/v2/version-group/11/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "colosseum",
-            "url": "https://pokeapi.co/api/v2/version-group/12/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "xd",
-            "url": "https://pokeapi.co/api/v2/version-group/13/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "black-2-white-2",
-            "url": "https://pokeapi.co/api/v2/version-group/14/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "x-y",
-            "url": "https://pokeapi.co/api/v2/version-group/15/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "omega-ruby-alpha-sapphire",
-            "url": "https://pokeapi.co/api/v2/version-group/16/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "sun-moon",
-            "url": "https://pokeapi.co/api/v2/version-group/17/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "ultra-sun-ultra-moon",
-            "url": "https://pokeapi.co/api/v2/version-group/18/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "lets-go-pikachu-lets-go-eevee",
-            "url": "https://pokeapi.co/api/v2/version-group/19/"
-          }
-        },
-        {
-          "level_learned_at": 1,
-          "move_learn_method": {
-            "name": "level-up",
-            "url": "https://pokeapi.co/api/v2/move-learn-method/1/"
-          },
-          "version_group": {
-            "name": "sword-shield",
-            "url": "https://pokeapi.co/api/v2/version-group/20/"
-          }
-        }
-      ]
-    }
-  ],
-  "name": "ditto",
-  "order": 214,
-  "past_types": [],
-  "species": {
-    "name": "ditto",
-    "url": "https://pokeapi.co/api/v2/pokemon-species/132/"
+export const Data = [
+  {
+    attack: 49,
+    defense: 49,
+    height: 7,
+    hp: 45,
+    id: 1,
+    name: "Bulbasaur",
+    "s-attack": 65,
+    "s-defense": 65,
+    speed: 45,
+    type: "grass",
   },
-  "sprites": {
-    "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png",
-    "back_female": null,
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/132.png",
-    "back_shiny_female": null,
-    "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
-    "front_female": null,
-    "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png",
-    "front_shiny_female": null,
-    "other": {
-      "dream_world": {
-        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg",
-        "front_female": null
-      },
-      "home": {
-        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/132.png",
-        "front_female": null,
-        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/132.png",
-        "front_shiny_female": null
-      },
-      "official-artwork": {
-        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png"
-      }
-    },
-    "versions": {
-      "generation-i": {
-        "red-blue": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/back/132.png",
-          "back_gray": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/back/gray/132.png",
-          "back_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/transparent/back/132.png",
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/132.png",
-          "front_gray": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/gray/132.png",
-          "front_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/transparent/132.png"
-        },
-        "yellow": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/back/132.png",
-          "back_gray": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/back/gray/132.png",
-          "back_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/transparent/back/132.png",
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/132.png",
-          "front_gray": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/gray/132.png",
-          "front_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/transparent/132.png"
-        }
-      },
-      "generation-ii": {
-        "crystal": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/back/132.png",
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/back/shiny/132.png",
-          "back_shiny_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/back/shiny/132.png",
-          "back_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/back/132.png",
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/132.png",
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/shiny/132.png",
-          "front_shiny_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/132.png",
-          "front_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/132.png"
-        },
-        "gold": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/gold/back/132.png",
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/gold/back/shiny/132.png",
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/gold/132.png",
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/gold/shiny/132.png",
-          "front_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/gold/transparent/132.png"
-        },
-        "silver": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/silver/back/132.png",
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/silver/back/shiny/132.png",
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/silver/132.png",
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/silver/shiny/132.png",
-          "front_transparent": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/silver/transparent/132.png"
-        }
-      },
-      "generation-iii": {
-        "emerald": {
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/emerald/132.png",
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/emerald/shiny/132.png"
-        },
-        "firered-leafgreen": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/firered-leafgreen/back/132.png",
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/firered-leafgreen/back/shiny/132.png",
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/firered-leafgreen/132.png",
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/firered-leafgreen/shiny/132.png"
-        },
-        "ruby-sapphire": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/ruby-sapphire/back/132.png",
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/ruby-sapphire/back/shiny/132.png",
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/ruby-sapphire/132.png",
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/ruby-sapphire/shiny/132.png"
-        }
-      },
-      "generation-iv": {
-        "diamond-pearl": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/diamond-pearl/back/132.png",
-          "back_female": null,
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/diamond-pearl/back/shiny/132.png",
-          "back_shiny_female": null,
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/diamond-pearl/132.png",
-          "front_female": null,
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/diamond-pearl/shiny/132.png",
-          "front_shiny_female": null
-        },
-        "heartgold-soulsilver": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/heartgold-soulsilver/back/132.png",
-          "back_female": null,
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/heartgold-soulsilver/back/shiny/132.png",
-          "back_shiny_female": null,
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/heartgold-soulsilver/132.png",
-          "front_female": null,
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/heartgold-soulsilver/shiny/132.png",
-          "front_shiny_female": null
-        },
-        "platinum": {
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/back/132.png",
-          "back_female": null,
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/back/shiny/132.png",
-          "back_shiny_female": null,
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/132.png",
-          "front_female": null,
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/shiny/132.png",
-          "front_shiny_female": null
-        }
-      },
-      "generation-v": {
-        "black-white": {
-          "animated": {
-            "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/132.gif",
-            "back_female": null,
-            "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/shiny/132.gif",
-            "back_shiny_female": null,
-            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/132.gif",
-            "front_female": null,
-            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/132.gif",
-            "front_shiny_female": null
-          },
-          "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/back/132.png",
-          "back_female": null,
-          "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/back/shiny/132.png",
-          "back_shiny_female": null,
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/132.png",
-          "front_female": null,
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/132.png",
-          "front_shiny_female": null
-        }
-      },
-      "generation-vi": {
-        "omegaruby-alphasapphire": {
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vi/omegaruby-alphasapphire/132.png",
-          "front_female": null,
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vi/omegaruby-alphasapphire/shiny/132.png",
-          "front_shiny_female": null
-        },
-        "x-y": {
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vi/x-y/132.png",
-          "front_female": null,
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vi/x-y/shiny/132.png",
-          "front_shiny_female": null
-        }
-      },
-      "generation-vii": {
-        "icons": {
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/132.png",
-          "front_female": null
-        },
-        "ultra-sun-ultra-moon": {
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/132.png",
-          "front_female": null,
-          "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/shiny/132.png",
-          "front_shiny_female": null
-        }
-      },
-      "generation-viii": {
-        "icons": {
-          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/132.png",
-          "front_female": null
-        }
-      }
-    }
+  {
+    attack: 62,
+    defense: 63,
+    height: 18,
+    hp: 60,
+    id: 2,
+    name: "Ivysaur",
+    "s-attack": 80,
+    "s-defense": 80,
+    speed: 60,
+    type: "grass",
   },
-  "stats": [
-    {
-      "base_stat": 48,
-      "effort": 1,
-      "stat": {
-        "name": "hp",
-        "url": "https://pokeapi.co/api/v2/stat/1/"
-      }
-    },
-    {
-      "base_stat": 48,
-      "effort": 0,
-      "stat": {
-        "name": "attack",
-        "url": "https://pokeapi.co/api/v2/stat/2/"
-      }
-    },
-    {
-      "base_stat": 48,
-      "effort": 0,
-      "stat": {
-        "name": "defense",
-        "url": "https://pokeapi.co/api/v2/stat/3/"
-      }
-    },
-    {
-      "base_stat": 48,
-      "effort": 0,
-      "stat": {
-        "name": "special-attack",
-        "url": "https://pokeapi.co/api/v2/stat/4/"
-      }
-    },
-    {
-      "base_stat": 48,
-      "effort": 0,
-      "stat": {
-        "name": "special-defense",
-        "url": "https://pokeapi.co/api/v2/stat/5/"
-      }
-    },
-    {
-      "base_stat": 48,
-      "effort": 0,
-      "stat": {
-        "name": "speed",
-        "url": "https://pokeapi.co/api/v2/stat/6/"
-      }
-    }
-  ],
-  "types": [
-    {
-      "slot": 1,
-      "type": {
-        "name": "normal",
-        "url": "https://pokeapi.co/api/v2/type/1/"
-      }
-    }
-  ],
-  "weight": 40
-}
+  {
+    attack: 82,
+    defense: 83,
+    height: 20,
+    hp: 80,
+    id: 3,
+    name: "Venusaur",
+    "s-attack": 100,
+    "s-defense": 100,
+    speed: 80,
+    type: "grass",
+  },
+  {
+    attack: 52,
+    defense: 43,
+    height: 6,
+    hp: 39,
+    id: 4,
+    name: "Charmander",
+    "s-attack": 60,
+    "s-defense": 50,
+    speed: 65,
+    type: "fire",
+  },
+  {
+    attack: 64,
+    defense: 58,
+    height: 18,
+    hp: 58,
+    id: 5,
+    name: "Charmeleon",
+    "s-attack": 80,
+    "s-defense": 65,
+    speed: 80,
+    type: "fire",
+  },
+  {
+    attack: 84,
+    defense: 78,
+    height: 20,
+    hp: 78,
+    id: 6,
+    name: "Charizard",
+    "s-attack": 109,
+    "s-defense": 85,
+    speed: 100,
+    type: "fire",
+  },
+  {
+    attack: 48,
+    defense: 65,
+    height: 5,
+    hp: 44,
+    id: 7,
+    name: "Squirtle",
+    "s-attack": 50,
+    "s-defense": 64,
+    speed: 43,
+    type: "water",
+  },
+  {
+    attack: 63,
+    defense: 80,
+    height: 18,
+    hp: 59,
+    id: 8,
+    name: "Wartortle",
+    "s-attack": 65,
+    "s-defense": 80,
+    speed: 58,
+    type: "water",
+  },
+  {
+    attack: 83,
+    defense: 100,
+    height: 20,
+    hp: 79,
+    id: 9,
+    name: "Blastoise",
+    "s-attack": 85,
+    "s-defense": 105,
+    speed: 78,
+    type: "water",
+  },
+  {
+    attack: 30,
+    defense: 35,
+    height: 3,
+    hp: 45,
+    id: 10,
+    name: "Caterpie",
+    "s-attack": 20,
+    "s-defense": 20,
+    speed: 45,
+    type: "bug",
+  },
+  {
+    attack: 20,
+    defense: 55,
+    height: 18,
+    hp: 50,
+    id: 11,
+    name: "Metapod",
+    "s-attack": 25,
+    "s-defense": 25,
+    speed: 30,
+    type: "bug",
+  },
+  {
+    attack: 45,
+    defense: 50,
+    height: 11,
+    hp: 60,
+    id: 12,
+    name: "Butterfree",
+    "s-attack": 90,
+    "s-defense": 80,
+    speed: 70,
+    type: "bug",
+  },
+  {
+    attack: 35,
+    defense: 30,
+    height: 3,
+    hp: 40,
+    id: 13,
+    name: "Weedle",
+    "s-attack": 20,
+    "s-defense": 20,
+    speed: 50,
+    type: "bug",
+  },
+  {
+    attack: 25,
+    defense: 50,
+    height: 18,
+    hp: 45,
+    id: 14,
+    name: "Kakuna",
+    "s-attack": 25,
+    "s-defense": 25,
+    speed: 35,
+    type: "bug",
+  },
+  {
+    attack: 90,
+    defense: 40,
+    height: 10,
+    hp: 65,
+    id: 15,
+    name: "Beedrill",
+    "s-attack": 45,
+    "s-defense": 80,
+    speed: 75,
+    type: "bug",
+  },
+  {
+    attack: 45,
+    defense: 40,
+    height: 3,
+    hp: 40,
+    id: 16,
+    name: "Pidgey",
+    "s-attack": 35,
+    "s-defense": 35,
+    speed: 56,
+    type: "flying",
+  },
+  {
+    attack: 60,
+    defense: 55,
+    height: 18,
+    hp: 63,
+    id: 17,
+    name: "Pidgeotto",
+    "s-attack": 50,
+    "s-defense": 50,
+    speed: 71,
+    type: "flying",
+  },
+  {
+    attack: 80,
+    defense: 75,
+    height: 21,
+    hp: 83,
+    id: 18,
+    name: "Pidgeot",
+    "s-attack": 70,
+    "s-defense": 70,
+    speed: 101,
+    type: "flying",
+  },
+  {
+    attack: 56,
+    defense: 35,
+    height: 3,
+    hp: 30,
+    id: 19,
+    name: "Rattata",
+    "s-attack": 25,
+    "s-defense": 35,
+    speed: 72,
+    type: "normal",
+  },
+  {
+    attack: 81,
+    defense: 60,
+    height: 7,
+    hp: 55,
+    id: 20,
+    name: "Raticate",
+    "s-attack": 50,
+    "s-defense": 70,
+    speed: 97,
+    type: "normal",
+  },
+  {
+    attack: 60,
+    defense: 30,
+    height: 3,
+    hp: 40,
+    id: 21,
+    name: "Spearow",
+    "s-attack": 31,
+    "s-defense": 31,
+    speed: 70,
+    type: "flying",
+  },
+  {
+    attack: 90,
+    defense: 65,
+    height: 21,
+    hp: 65,
+    id: 22,
+    name: "Fearow",
+    "s-attack": 61,
+    "s-defense": 61,
+    speed: 100,
+    type: "flying",
+  },
+  {
+    attack: 60,
+    defense: 44,
+    height: 20,
+    hp: 35,
+    id: 23,
+    name: "Ekans",
+    "s-attack": 40,
+    "s-defense": 54,
+    speed: 55,
+    type: "poison",
+  },
+  {
+    attack: 95,
+    defense: 69,
+    height: 20,
+    hp: 60,
+    id: 24,
+    name: "Arbok",
+    "s-attack": 65,
+    "s-defense": 79,
+    speed: 80,
+    type: "poison",
+  },
+  {
+    attack: 55,
+    defense: 40,
+    height: 3,
+    hp: 35,
+    id: 25,
+    name: "Pikachu",
+    "s-attack": 50,
+    "s-defense": 50,
+    speed: 90,
+    type: "electric",
+  },
+  {
+    attack: 90,
+    defense: 55,
+    height: 8,
+    hp: 60,
+    id: 26,
+    name: "Raichu",
+    "s-attack": 90,
+    "s-defense": 80,
+    speed: 110,
+    type: "electric",
+  },
+  {
+    attack: 75,
+    defense: 85,
+    height: 6,
+    hp: 50,
+    id: 27,
+    name: "Sandshrew",
+    "s-attack": 20,
+    "s-defense": 30,
+    speed: 40,
+    type: "ground",
+  },
+  {
+    attack: 100,
+    defense: 110,
+    height: 18,
+    hp: 75,
+    id: 28,
+    name: "Sandslash",
+    "s-attack": 45,
+    "s-defense": 55,
+    speed: 65,
+    type: "ground",
+  },
+  {
+    attack: 57,
+    defense: 40,
+    height: 5,
+    hp: 46,
+    id: 29,
+    name: "Nidoran-f",
+    "s-attack": 40,
+    "s-defense": 40,
+    speed: 50,
+    type: "normal",
+  },
+  {
+    attack: 62,
+    defense: 67,
+    height: 18,
+    hp: 70,
+    id: 30,
+    name: "Nidorina",
+    "s-attack": 55,
+    "s-defense": 55,
+    speed: 56,
+    type: "normal",
+  },
+  {
+    attack: 92,
+    defense: 87,
+    height: 19,
+    hp: 90,
+    id: 31,
+    name: "Nidoqueen",
+    "s-attack": 75,
+    "s-defense": 85,
+    speed: 76,
+    type: "normal",
+  },
+  {
+    attack: 57,
+    defense: 40,
+    height: 5,
+    hp: 46,
+    id: 32,
+    name: "Nidoran-m",
+    "s-attack": 40,
+    "s-defense": 40,
+    speed: 50,
+    type: "normal",
+  },
+  {
+    attack: 72,
+    defense: 57,
+    height: 18,
+    hp: 61,
+    id: 33,
+    name: "Nidorino",
+    "s-attack": 55,
+    "s-defense": 55,
+    speed: 65,
+    type: "normal",
+  },
+  {
+    attack: 102,
+    defense: 77,
+    height: 20,
+    hp: 81,
+    id: 34,
+    name: "Nidoking",
+    "s-attack": 85,
+    "s-defense": 75,
+    speed: 85,
+    type: "normal",
+  },
+  {
+    attack: 45,
+    defense: 48,
+    height: 6,
+    hp: 70,
+    id: 35,
+    name: "Clefairy",
+    "s-attack": 60,
+    "s-defense": 65,
+    speed: 35,
+    type: "normal",
+  },
+  {
+    attack: 70,
+    defense: 73,
+    height: 18,
+    hp: 95,
+    id: 36,
+    name: "Clefable",
+    "s-attack": 95,
+    "s-defense": 90,
+    speed: 60,
+    type: "normal",
+  },
+  {
+    attack: 41,
+    defense: 40,
+    height: 6,
+    hp: 38,
+    id: 37,
+    name: "Vulpix",
+    "s-attack": 50,
+    "s-defense": 65,
+    speed: 65,
+    type: "fire",
+  },
+  {
+    attack: 76,
+    defense: 75,
+    height: 18,
+    hp: 73,
+    id: 38,
+    name: "Ninetales",
+    "s-attack": 81,
+    "s-defense": 100,
+    speed: 100,
+    type: "fire",
+  },
+  {
+    attack: 45,
+    defense: 20,
+    height: 5,
+    hp: 115,
+    id: 39,
+    name: "Jigglypuff",
+    "s-attack": 45,
+    "s-defense": 25,
+    speed: 20,
+    type: "normal",
+  },
+  {
+    attack: 70,
+    defense: 45,
+    height: 10,
+    hp: 140,
+    id: 40,
+    name: "Wigglytuff",
+    "s-attack": 85,
+    "s-defense": 50,
+    speed: 45,
+    type: "normal",
+  },
+  {
+    attack: 45,
+    defense: 35,
+    height: 8,
+    hp: 40,
+    id: 41,
+    name: "Zubat",
+    "s-attack": 30,
+    "s-defense": 40,
+    speed: 55,
+    type: "flying",
+  },
+  {
+    attack: 80,
+    defense: 70,
+    height: 16,
+    hp: 75,
+    id: 42,
+    name: "Golbat",
+    "s-attack": 65,
+    "s-defense": 75,
+    speed: 90,
+    type: "flying",
+  },
+  {
+    attack: 50,
+    defense: 55,
+    height: 5,
+    hp: 45,
+    id: 43,
+    name: "Oddish",
+    "s-attack": 75,
+    "s-defense": 65,
+    speed: 30,
+    type: "grass",
+  },
+  {
+    attack: 65,
+    defense: 70,
+    height: 8,
+    hp: 60,
+    id: 44,
+    name: "Gloom",
+    "s-attack": 85,
+    "s-defense": 75,
+    speed: 40,
+    type: "grass",
+  },
+  {
+    attack: 80,
+    defense: 85,
+    height: 12,
+    hp: 75,
+    id: 45,
+    name: "Vileplume",
+    "s-attack": 110,
+    "s-defense": 90,
+    speed: 50,
+    type: "grass",
+  },
+  {
+    attack: 70,
+    defense: 55,
+    height: 3,
+    hp: 35,
+    id: 46,
+    name: "Paras",
+    "s-attack": 45,
+    "s-defense": 55,
+    speed: 25,
+    type: "bug",
+  },
+  {
+    attack: 95,
+    defense: 80,
+    height: 10,
+    hp: 60,
+    id: 47,
+    name: "Parasect",
+    "s-attack": 60,
+    "s-defense": 80,
+    speed: 30,
+    type: "bug",
+  },
+  {
+    attack: 55,
+    defense: 50,
+    height: 10,
+    hp: 60,
+    id: 48,
+    name: "Venonat",
+    "s-attack": 40,
+    "s-defense": 55,
+    speed: 45,
+    type: "bug",
+  },
+  {
+    attack: 65,
+    defense: 60,
+    height: 15,
+    hp: 70,
+    id: 49,
+    name: "Venomoth",
+    "s-attack": 90,
+    "s-defense": 75,
+    speed: 90,
+    type: "bug",
+  },
+  {
+    attack: 55,
+    defense: 25,
+    height: 2,
+    hp: 10,
+    id: 50,
+    name: "Diglett",
+    "s-attack": 35,
+    "s-defense": 45,
+    speed: 95,
+    type: "ground",
+  },
+  {
+    attack: 100,
+    defense: 50,
+    height: 7,
+    hp: 35,
+    id: 51,
+    name: "Dugtrio",
+    "s-attack": 50,
+    "s-defense": 70,
+    speed: 120,
+    type: "ground",
+  },
+  {
+    attack: 45,
+    defense: 35,
+    height: 4,
+    hp: 40,
+    id: 52,
+    name: "Meowth",
+    "s-attack": 40,
+    "s-defense": 40,
+    speed: 90,
+    type: "normal",
+  },
+  {
+    attack: 70,
+    defense: 60,
+    height: 10,
+    hp: 65,
+    id: 53,
+    name: "Persian",
+    "s-attack": 65,
+    "s-defense": 65,
+    speed: 115,
+    type: "normal",
+  },
+  {
+    attack: 52,
+    defense: 48,
+    height: 8,
+    hp: 50,
+    id: 54,
+    name: "Psyduck",
+    "s-attack": 65,
+    "s-defense": 50,
+    speed: 55,
+    type: "water",
+  },
+  {
+    attack: 82,
+    defense: 78,
+    height: 17,
+    hp: 80,
+    id: 55,
+    name: "Golduck",
+    "s-attack": 95,
+    "s-defense": 80,
+    speed: 85,
+    type: "water",
+  },
+  {
+    attack: 80,
+    defense: 35,
+    height: 5,
+    hp: 40,
+    id: 56,
+    name: "Mankey",
+    "s-attack": 35,
+    "s-defense": 45,
+    speed: 70,
+    type: "fighting",
+  },
+  {
+    attack: 105,
+    defense: 60,
+    height: 10,
+    hp: 65,
+    id: 57,
+    name: "Primeape",
+    "s-attack": 60,
+    "s-defense": 70,
+    speed: 95,
+    type: "fighting",
+  },
+  {
+    attack: 70,
+    defense: 45,
+    height: 7,
+    hp: 55,
+    id: 58,
+    name: "Growlithe",
+    "s-attack": 70,
+    "s-defense": 50,
+    speed: 60,
+    type: "fire",
+  },
+  {
+    attack: 110,
+    defense: 80,
+    height: 20,
+    hp: 90,
+    id: 59,
+    name: "Arcanine",
+    "s-attack": 100,
+    "s-defense": 80,
+    speed: 95,
+    type: "fire",
+  },
+  {
+    attack: 50,
+    defense: 40,
+    height: 6,
+    hp: 40,
+    id: 60,
+    name: "Poliwag",
+    "s-attack": 40,
+    "s-defense": 40,
+    speed: 90,
+    type: "water",
+  },
+  {
+    attack: 65,
+    defense: 65,
+    height: 13,
+    hp: 65,
+    id: 61,
+    name: "Poliwhirl",
+    "s-attack": 50,
+    "s-defense": 50,
+    speed: 90,
+    type: "water",
+  },
+  {
+    attack: 95,
+    defense: 95,
+    height: 16,
+    hp: 90,
+    id: 62,
+    name: "Poliwrath",
+    "s-attack": 70,
+    "s-defense": 90,
+    speed: 70,
+    type: "fighting",
+  },
+  {
+    attack: 20,
+    defense: 15,
+    height: 9,
+    hp: 25,
+    id: 63,
+    name: "Abra",
+    "s-attack": 105,
+    "s-defense": 55,
+    speed: 90,
+    type: "psychic",
+  },
+  {
+    attack: 35,
+    defense: 30,
+    height: 13,
+    hp: 40,
+    id: 64,
+    name: "Kadabra",
+    "s-attack": 120,
+    "s-defense": 70,
+    speed: 105,
+    type: "psychic",
+  },
+  {
+    attack: 50,
+    defense: 45,
+    height: 18,
+    hp: 55,
+    id: 65,
+    name: "Alakazam",
+    "s-attack": 135,
+    "s-defense": 95,
+    speed: 120,
+    type: "psychic",
+  },
+  {
+    attack: 80,
+    defense: 50,
+    height: 8,
+    hp: 70,
+    id: 66,
+    name: "Machop",
+    "s-attack": 35,
+    "s-defense": 35,
+    speed: 35,
+    type: "fighting",
+  },
+  {
+    attack: 100,
+    defense: 70,
+    height: 15,
+    hp: 80,
+    id: 67,
+    name: "Machoke",
+    "s-attack": 50,
+    "s-defense": 60,
+    speed: 45,
+    type: "fighting",
+  },
+  {
+    attack: 130,
+    defense: 80,
+    height: 19,
+    hp: 90,
+    id: 68,
+    name: "Machamp",
+    "s-attack": 65,
+    "s-defense": 85,
+    speed: 55,
+    type: "fighting",
+  },
+  {
+    attack: 75,
+    defense: 35,
+    height: 7,
+    hp: 50,
+    id: 69,
+    name: "Bellsprout",
+    "s-attack": 70,
+    "s-defense": 30,
+    speed: 40,
+    type: "grass",
+  },
+  {
+    attack: 90,
+    defense: 50,
+    height: 10,
+    hp: 65,
+    id: 70,
+    name: "Weepinbell",
+    "s-attack": 85,
+    "s-defense": 45,
+    speed: 55,
+    type: "grass",
+  },
+  {
+    attack: 105,
+    defense: 65,
+    height: 17,
+    hp: 80,
+    id: 71,
+    name: "Victreebel",
+    "s-attack": 100,
+    "s-defense": 70,
+    speed: 70,
+    type: "grass",
+  },
+  {
+    attack: 40,
+    defense: 35,
+    height: 9,
+    hp: 40,
+    id: 72,
+    name: "Tentacool",
+    "s-attack": 50,
+    "s-defense": 100,
+    speed: 70,
+    type: "water",
+  },
+  {
+    attack: 70,
+    defense: 65,
+    height: 16,
+    hp: 80,
+    id: 73,
+    name: "Tentacruel",
+    "s-attack": 80,
+    "s-defense": 120,
+    speed: 100,
+    type: "water",
+  },
+  {
+    attack: 80,
+    defense: 100,
+    height: 4,
+    hp: 40,
+    id: 74,
+    name: "Geodude",
+    "s-attack": 30,
+    "s-defense": 30,
+    speed: 20,
+    type: "rock",
+  },
+  {
+    attack: 95,
+    defense: 115,
+    height: 10,
+    hp: 55,
+    id: 75,
+    name: "Graveler",
+    "s-attack": 45,
+    "s-defense": 45,
+    speed: 35,
+    type: "rock",
+  },
+  {
+    attack: 120,
+    defense: 130,
+    height: 14,
+    hp: 80,
+    id: 76,
+    name: "Golem",
+    "s-attack": 55,
+    "s-defense": 65,
+    speed: 45,
+    type: "rock",
+  },
+  {
+    attack: 85,
+    defense: 55,
+    height: 10,
+    hp: 50,
+    id: 77,
+    name: "Ponyta",
+    "s-attack": 65,
+    "s-defense": 65,
+    speed: 90,
+    type: "fire",
+  },
+  {
+    attack: 100,
+    defense: 70,
+    height: 20,
+    hp: 65,
+    id: 78,
+    name: "Rapidash",
+    "s-attack": 80,
+    "s-defense": 80,
+    speed: 105,
+    type: "fire",
+  },
+  {
+    attack: 65,
+    defense: 65,
+    height: 12,
+    hp: 90,
+    id: 79,
+    name: "Slowpoke",
+    "s-attack": 40,
+    "s-defense": 40,
+    speed: 15,
+    type: "normal",
+  },
+  {
+    attack: 75,
+    defense: 110,
+    height: 16,
+    hp: 95,
+    id: 80,
+    name: "Slowbro",
+    "s-attack": 100,
+    "s-defense": 80,
+    speed: 30,
+    type: "normal",
+  },
+  {
+    attack: 35,
+    defense: 70,
+    height: 3,
+    hp: 25,
+    id: 81,
+    name: "Magnemite",
+    "s-attack": 95,
+    "s-defense": 55,
+    speed: 45,
+    type: "electric",
+  },
+  {
+    attack: 60,
+    defense: 95,
+    height: 10,
+    hp: 50,
+    id: 82,
+    name: "Magneton",
+    "s-attack": 120,
+    "s-defense": 70,
+    speed: 70,
+    type: "electric",
+  },
+  {
+    attack: 90,
+    defense: 55,
+    height: 8,
+    hp: 52,
+    id: 83,
+    name: "Farfetchd",
+    "s-attack": 58,
+    "s-defense": 62,
+    speed: 60,
+    type: "flying",
+  },
+  {
+    attack: 85,
+    defense: 45,
+    height: 14,
+    hp: 35,
+    id: 84,
+    name: "Doduo",
+    "s-attack": 35,
+    "s-defense": 35,
+    speed: 75,
+    type: "flying",
+  },
+  {
+    attack: 110,
+    defense: 70,
+    height: 18,
+    hp: 60,
+    id: 85,
+    name: "Dodrio",
+    "s-attack": 60,
+    "s-defense": 60,
+    speed: 110,
+    type: "flying",
+  },
+  {
+    attack: 45,
+    defense: 55,
+    height: 11,
+    hp: 65,
+    id: 86,
+    name: "Seel",
+    "s-attack": 45,
+    "s-defense": 70,
+    speed: 45,
+    type: "ice",
+  },
+  {
+    attack: 70,
+    defense: 80,
+    height: 17,
+    hp: 90,
+    id: 87,
+    name: "Dewgong",
+    "s-attack": 70,
+    "s-defense": 95,
+    speed: 70,
+    type: "ice",
+  },
+  {
+    attack: 80,
+    defense: 50,
+    height: 9,
+    hp: 80,
+    id: 88,
+    name: "Grimer",
+    "s-attack": 40,
+    "s-defense": 50,
+    speed: 25,
+    type: "poison",
+  },
+  {
+    attack: 105,
+    defense: 75,
+    height: 12,
+    hp: 105,
+    id: 89,
+    name: "Muk",
+    "s-attack": 65,
+    "s-defense": 100,
+    speed: 50,
+    type: "poison",
+  },
+  {
+    attack: 65,
+    defense: 100,
+    height: 3,
+    hp: 30,
+    id: 90,
+    name: "Shellder",
+    "s-attack": 45,
+    "s-defense": 25,
+    speed: 40,
+    type: "water",
+  },
+  {
+    attack: 95,
+    defense: 180,
+    height: 15,
+    hp: 50,
+    id: 91,
+    name: "Cloyster",
+    "s-attack": 85,
+    "s-defense": 45,
+    speed: 70,
+    type: "water",
+  },
+  {
+    attack: 35,
+    defense: 30,
+    height: 13,
+    hp: 30,
+    id: 92,
+    name: "Gastly",
+    "s-attack": 100,
+    "s-defense": 35,
+    speed: 80,
+    type: "ghost",
+  },
+  {
+    attack: 50,
+    defense: 45,
+    height: 16,
+    hp: 45,
+    id: 93,
+    name: "Haunter",
+    "s-attack": 115,
+    "s-defense": 55,
+    speed: 95,
+    type: "ghost",
+  },
+  {
+    attack: 65,
+    defense: 60,
+    height: 17,
+    hp: 60,
+    id: 94,
+    name: "Gengar",
+    "s-attack": 130,
+    "s-defense": 75,
+    speed: 110,
+    type: "ghost",
+  },
+  {
+    attack: 45,
+    defense: 160,
+    height: 23,
+    hp: 35,
+    id: 95,
+    name: "Onix",
+    "s-attack": 30,
+    "s-defense": 45,
+    speed: 70,
+    type: "rock",
+  },
+  {
+    attack: 48,
+    defense: 45,
+    height: 10,
+    hp: 60,
+    id: 96,
+    name: "Drowzee",
+    "s-attack": 43,
+    "s-defense": 90,
+    speed: 42,
+    type: "psychic",
+  },
+  {
+    attack: 73,
+    defense: 70,
+    height: 16,
+    hp: 85,
+    id: 97,
+    name: "Hypno",
+    "s-attack": 73,
+    "s-defense": 115,
+    speed: 67,
+    type: "psychic",
+  },
+  {
+    attack: 105,
+    defense: 90,
+    height: 4,
+    hp: 30,
+    id: 98,
+    name: "Krabby",
+    "s-attack": 25,
+    "s-defense": 25,
+    speed: 50,
+    type: "water",
+  },
+  {
+    attack: 130,
+    defense: 115,
+    height: 13,
+    hp: 55,
+    id: 99,
+    name: "Kingler",
+    "s-attack": 50,
+    "s-defense": 50,
+    speed: 75,
+    type: "water",
+  },
+  {
+    attack: 30,
+    defense: 50,
+    height: 5,
+    hp: 40,
+    id: 100,
+    name: "Voltorb",
+    "s-attack": 55,
+    "s-defense": 55,
+    speed: 100,
+    type: "electric",
+  },
+  {
+    attack: 50,
+    defense: 70,
+    height: 12,
+    hp: 60,
+    id: 101,
+    name: "Electrode",
+    "s-attack": 80,
+    "s-defense": 80,
+    speed: 150,
+    type: "electric",
+  },
+  {
+    attack: 40,
+    defense: 80,
+    height: 4,
+    hp: 60,
+    id: 102,
+    name: "Exeggcute",
+    "s-attack": 60,
+    "s-defense": 45,
+    speed: 40,
+    type: "grass",
+  },
+  {
+    attack: 95,
+    defense: 85,
+    height: 22,
+    hp: 95,
+    id: 103,
+    name: "Exeggutor",
+    "s-attack": 125,
+    "s-defense": 75,
+    speed: 55,
+    type: "grass",
+  },
+  {
+    attack: 50,
+    defense: 95,
+    height: 4,
+    hp: 50,
+    id: 104,
+    name: "Cubone",
+    "s-attack": 40,
+    "s-defense": 50,
+    speed: 35,
+    type: "ground",
+  },
+  {
+    attack: 80,
+    defense: 110,
+    height: 10,
+    hp: 60,
+    id: 105,
+    name: "Marowak",
+    "s-attack": 50,
+    "s-defense": 80,
+    speed: 45,
+    type: "ground",
+  },
+  {
+    attack: 120,
+    defense: 53,
+    height: 19,
+    hp: 50,
+    id: 106,
+    name: "Hitmonlee",
+    "s-attack": 35,
+    "s-defense": 110,
+    speed: 87,
+    type: "fighting",
+  },
+  {
+    attack: 105,
+    defense: 79,
+    height: 19,
+    hp: 50,
+    id: 107,
+    name: "Hitmonchan",
+    "s-attack": 35,
+    "s-defense": 110,
+    speed: 76,
+    type: "fighting",
+  },
+  {
+    attack: 55,
+    defense: 75,
+    height: 12,
+    hp: 90,
+    id: 108,
+    name: "Lickitung",
+    "s-attack": 60,
+    "s-defense": 75,
+    speed: 30,
+    type: "normal",
+  },
+  {
+    attack: 65,
+    defense: 95,
+    height: 6,
+    hp: 40,
+    id: 109,
+    name: "Koffing",
+    "s-attack": 60,
+    "s-defense": 45,
+    speed: 35,
+    type: "poison",
+  },
+  {
+    attack: 90,
+    defense: 120,
+    height: 12,
+    hp: 65,
+    id: 110,
+    name: "Weezing",
+    "s-attack": 85,
+    "s-defense": 70,
+    speed: 60,
+    type: "poison",
+  },
+  {
+    attack: 85,
+    defense: 95,
+    height: 10,
+    hp: 80,
+    id: 111,
+    name: "Rhyhorn",
+    "s-attack": 30,
+    "s-defense": 30,
+    speed: 25,
+    type: "rock",
+  },
+  {
+    attack: 130,
+    defense: 120,
+    height: 19,
+    hp: 105,
+    id: 112,
+    name: "Rhydon",
+    "s-attack": 45,
+    "s-defense": 45,
+    speed: 40,
+    type: "rock",
+  },
+  {
+    attack: 5,
+    defense: 5,
+    height: 20,
+    hp: 250,
+    id: 113,
+    name: "Chansey",
+    "s-attack": 35,
+    "s-defense": 105,
+    speed: 50,
+    type: "normal",
+  },
+  {
+    attack: 55,
+    defense: 115,
+    height: 10,
+    hp: 65,
+    id: 114,
+    name: "Tangela",
+    "s-attack": 100,
+    "s-defense": 40,
+    speed: 60,
+    type: "grass",
+  },
+  {
+    attack: 95,
+    defense: 80,
+    height: 20,
+    hp: 105,
+    id: 115,
+    name: "Kangaskhan",
+    "s-attack": 40,
+    "s-defense": 80,
+    speed: 90,
+    type: "normal",
+  },
+  {
+    attack: 40,
+    defense: 70,
+    height: 4,
+    hp: 30,
+    id: 116,
+    name: "Horsea",
+    "s-attack": 70,
+    "s-defense": 25,
+    speed: 60,
+    type: "water",
+  },
+  {
+    attack: 65,
+    defense: 95,
+    height: 12,
+    hp: 55,
+    id: 117,
+    name: "Seadra",
+    "s-attack": 95,
+    "s-defense": 45,
+    speed: 85,
+    type: "water",
+  },
+  {
+    attack: 67,
+    defense: 60,
+    height: 6,
+    hp: 45,
+    id: 118,
+    name: "Goldeen",
+    "s-attack": 35,
+    "s-defense": 50,
+    speed: 63,
+    type: "water",
+  },
+  {
+    attack: 92,
+    defense: 65,
+    height: 13,
+    hp: 80,
+    id: 119,
+    name: "Seaking",
+    "s-attack": 65,
+    "s-defense": 80,
+    speed: 68,
+    type: "water",
+  },
+  {
+    attack: 45,
+    defense: 55,
+    height: 8,
+    hp: 30,
+    id: 120,
+    name: "Staryu",
+    "s-attack": 70,
+    "s-defense": 55,
+    speed: 85,
+    type: "water",
+  },
+  {
+    attack: 75,
+    defense: 85,
+    height: 11,
+    hp: 60,
+    id: 121,
+    name: "Starmie",
+    "s-attack": 100,
+    "s-defense": 85,
+    speed: 115,
+    type: "water",
+  },
+  {
+    attack: 45,
+    defense: 65,
+    height: 18,
+    hp: 40,
+    id: 122,
+    name: "Mr-Mime",
+    "s-attack": 100,
+    "s-defense": 120,
+    speed: 90,
+    type: "psychic",
+  },
+  {
+    attack: 110,
+    defense: 80,
+    height: 18,
+    hp: 70,
+    id: 123,
+    name: "Scyther",
+    "s-attack": 55,
+    "s-defense": 80,
+    speed: 105,
+    type: "bug",
+  },
+  {
+    attack: 50,
+    defense: 35,
+    height: 14,
+    hp: 65,
+    id: 124,
+    name: "Jynx",
+    "s-attack": 115,
+    "s-defense": 95,
+    speed: 95,
+    type: "psychic",
+  },
+  {
+    attack: 83,
+    defense: 57,
+    height: 15,
+    hp: 65,
+    id: 125,
+    name: "Electabuzz",
+    "s-attack": 95,
+    "s-defense": 85,
+    speed: 105,
+    type: "electric",
+  },
+  {
+    attack: 95,
+    defense: 57,
+    height: 15,
+    hp: 65,
+    id: 126,
+    name: "Magmar",
+    "s-attack": 100,
+    "s-defense": 85,
+    speed: 93,
+    type: "fire",
+  },
+  {
+    attack: 125,
+    defense: 100,
+    height: 15,
+    hp: 65,
+    id: 127,
+    name: "Pinsir",
+    "s-attack": 55,
+    "s-defense": 70,
+    speed: 85,
+    type: "bug",
+  },
+  {
+    attack: 100,
+    defense: 95,
+    height: 20,
+    hp: 75,
+    id: 128,
+    name: "Tauros",
+    "s-attack": 40,
+    "s-defense": 70,
+    speed: 110,
+    type: "normal",
+  },
+  {
+    attack: 10,
+    defense: 55,
+    height: 9,
+    hp: 20,
+    id: 129,
+    name: "Magikarp",
+    "s-attack": 15,
+    "s-defense": 20,
+    speed: 80,
+    type: "water",
+  },
+  {
+    attack: 125,
+    defense: 79,
+    height: 23,
+    hp: 95,
+    id: 130,
+    name: "Gyarados",
+    "s-attack": 60,
+    "s-defense": 100,
+    speed: 81,
+    type: "water",
+  },
+  {
+    attack: 85,
+    defense: 80,
+    height: 22,
+    hp: 130,
+    id: 131,
+    name: "Lapras",
+    "s-attack": 85,
+    "s-defense": 95,
+    speed: 60,
+    type: "water",
+  },
+  {
+    attack: 48,
+    defense: 48,
+    height: 3,
+    hp: 48,
+    id: 132,
+    name: "Ditto",
+    "s-attack": 48,
+    "s-defense": 48,
+    speed: 48,
+    type: "normal",
+  },
+  {
+    attack: 55,
+    defense: 50,
+    height: 3,
+    hp: 55,
+    id: 133,
+    name: "Eevee",
+    "s-attack": 45,
+    "s-defense": 65,
+    speed: 55,
+    type: "normal",
+  },
+  {
+    attack: 65,
+    defense: 60,
+    height: 10,
+    hp: 130,
+    id: 134,
+    name: "Vaporeon",
+    "s-attack": 110,
+    "s-defense": 95,
+    speed: 65,
+    type: "water",
+  },
+  {
+    attack: 65,
+    defense: 60,
+    height: 8,
+    hp: 65,
+    id: 135,
+    name: "Jolteon",
+    "s-attack": 110,
+    "s-defense": 95,
+    speed: 130,
+    type: "electric",
+  },
+  {
+    attack: 130,
+    defense: 60,
+    height: 9,
+    hp: 65,
+    id: 136,
+    name: "Flareon",
+    "s-attack": 95,
+    "s-defense": 110,
+    speed: 65,
+    type: "fire",
+  },
+  {
+    attack: 60,
+    defense: 70,
+    height: 8,
+    hp: 65,
+    id: 137,
+    name: "Porygon",
+    "s-attack": 85,
+    "s-defense": 75,
+    speed: 40,
+    type: "normal",
+  },
+  {
+    attack: 40,
+    defense: 100,
+    height: 4,
+    hp: 35,
+    id: 138,
+    name: "Omanyte",
+    "s-attack": 90,
+    "s-defense": 55,
+    speed: 35,
+    type: "water",
+  },
+  {
+    attack: 60,
+    defense: 125,
+    height: 10,
+    hp: 70,
+    id: 139,
+    name: "Omastar",
+    "s-attack": 115,
+    "s-defense": 70,
+    speed: 55,
+    type: "water",
+  },
+  {
+    attack: 80,
+    defense: 90,
+    height: 5,
+    hp: 30,
+    id: 140,
+    name: "Kabuto",
+    "s-attack": 55,
+    "s-defense": 45,
+    speed: 55,
+    type: "water",
+  },
+  {
+    attack: 115,
+    defense: 105,
+    height: 13,
+    hp: 60,
+    id: 141,
+    name: "Kabutops",
+    "s-attack": 65,
+    "s-defense": 70,
+    speed: 80,
+    type: "water",
+  },
+  {
+    attack: 105,
+    defense: 65,
+    height: 18,
+    hp: 80,
+    id: 142,
+    name: "Aerodactyl",
+    "s-attack": 60,
+    "s-defense": 75,
+    speed: 130,
+    type: "flying",
+  },
+  {
+    attack: 110,
+    defense: 65,
+    height: 22,
+    hp: 160,
+    id: 143,
+    name: "Snorlax",
+    "s-attack": 65,
+    "s-defense": 110,
+    speed: 30,
+    type: "normal",
+  },
+  {
+    attack: 85,
+    defense: 100,
+    height: 23,
+    hp: 90,
+    id: 144,
+    name: "Articuno",
+    "s-attack": 95,
+    "s-defense": 125,
+    speed: 85,
+    type: "ice",
+  },
+  {
+    attack: 90,
+    defense: 85,
+    height: 23,
+    hp: 90,
+    id: 145,
+    name: "Zapdos",
+    "s-attack": 125,
+    "s-defense": 90,
+    speed: 100,
+    type: "electric",
+  },
+  {
+    attack: 100,
+    defense: 90,
+    height: 23,
+    hp: 90,
+    id: 146,
+    name: "Moltres",
+    "s-attack": 125,
+    "s-defense": 85,
+    speed: 90,
+    type: "fire",
+  },
+  {
+    attack: 64,
+    defense: 45,
+    height: 16,
+    hp: 41,
+    id: 147,
+    name: "Dratini",
+    "s-attack": 50,
+    "s-defense": 50,
+    speed: 50,
+    type: "dragon",
+  },
+  {
+    attack: 84,
+    defense: 65,
+    height: 18,
+    hp: 61,
+    id: 148,
+    name: "Dragonair",
+    "s-attack": 70,
+    "s-defense": 70,
+    speed: 70,
+    type: "dragon",
+  },
+  {
+    attack: 134,
+    defense: 95,
+    height: 20,
+    hp: 91,
+    id: 149,
+    name: "Dragonite",
+    "s-attack": 100,
+    "s-defense": 100,
+    speed: 80,
+    type: "dragon",
+  },
+  {
+    attack: 110,
+    defense: 90,
+    height: 18,
+    hp: 106,
+    id: 150,
+    name: "Mewtwo",
+    "s-attack": 154,
+    "s-defense": 90,
+    speed: 130,
+    type: "psychic",
+  },
+  {
+    attack: 100,
+    defense: 100,
+    height: 4,
+    hp: 100,
+    id: 151,
+    name: "Mew",
+    "s-attack": 100,
+    "s-defense": 100,
+    speed: 100,
+    type: "psychic",
+  },
+];
