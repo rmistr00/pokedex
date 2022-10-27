@@ -40,21 +40,22 @@
     color: white;
 
     .poke-max-stat {
-      width: 255px;
+      width: 200px;
       box-shadow: var(--inset-shadow);
       border-radius: 0 20px 20px 0;
       background: rgb(230, 230, 230);
-      height: 15px;
+      height: 12px;
       margin-bottom: 10px;
       position: relative;
     }
     .poke-stat {
+      max-width: 200px;
       transition: 0.3s;
       border-radius: 0 20px 20px 0;
       background: #4caf50;
       position: absolute;
       box-shadow: var(--inset-shadow);
-      height: 15px;
+      height: 12px;
       top: 0;
     }
     .stat-name {
@@ -63,6 +64,7 @@
       position: absolute;
       z-index: 10;
       right: 5px;
+      font-size: 8px;
       padding: 1px;
     }
   }
@@ -76,14 +78,14 @@
   #poke-trainer {
     position: absolute;
     right: 0;
-    bottom: 150px;
+    bottom: 140px;
     margin: 20px;
     transition: 0.3s;
   }
   #poke-size {
     position: absolute;
     right: 0;
-    bottom: 150px;
+    bottom: 140px;
     margin: 20px 60px;
   }
 }

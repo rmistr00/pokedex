@@ -31,7 +31,7 @@
 
   #app-version {
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     margin: 20px;
     font-weight: bold;
@@ -42,9 +42,10 @@
     border: 5px solid white;
     background: #4caf50;
     position: absolute;
-    bottom: 60px;
+    bottom: 100px;
     font-size: 30px;
-    margin: 60px;
+    width: 200px;
+    margin: auto;
     border-radius: 30px;
     font-family: var(--theme);
     font-weight: bold;

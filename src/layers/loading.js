@@ -23,9 +23,9 @@ function Loading({ setLayer }) {
         src={pokeball}
       />
       <div id="app-name">
-        Pokédex<sub>BETA</sub>
+        Pokédex<sub>ALPHA</sub>
       </div>
-      <div id="app-version">v0.12</div>
+      <div id="app-version">v 0.2</div>
       <button id="start" onClick={() => setLayer("home")}>
         start
       </button>

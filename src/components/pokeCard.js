@@ -47,7 +47,7 @@ export const PokeCard = ({ pokemon }) => {
             <div className="stat-name"> {stats[s]}</div>
             <div
               className="poke-stat"
-              style={{ width: `${(pokemon[s] / 255) * 255}px` }}
+              style={{ width: `${(pokemon[s] / 200) * 300}px` }}
             ></div>
           </div>
         ))}
