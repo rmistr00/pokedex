@@ -43,13 +43,13 @@ function Home({ setLayer }) {
       <div
         id="poke-search"
         className="border"
-        // onClick={() => {
-        //   setLayer("search");
-        // }}
+        onClick={() => {
+          setLayer("search");
+        }}
       >
         <motion.div
           animate={{
-            scale: 3.2,
+            scale: 2.5,
             opacity: [0, 1, 0],
           }}
           transition={{

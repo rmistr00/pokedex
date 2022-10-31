@@ -134,7 +134,7 @@ export const Data = [
   {
     attack: 45,
     defense: 50,
-    height: 11,
+    height: 15,
     hp: 60,
     id: 12,
     name: "Butterfree",
@@ -170,7 +170,7 @@ export const Data = [
   {
     attack: 90,
     defense: 40,
-    height: 10,
+    height: 15,
     hp: 65,
     id: 15,
     name: "Beedrill",
@@ -266,7 +266,7 @@ export const Data = [
   {
     attack: 60,
     defense: 44,
-    height: 20,
+    height: 15,
     hp: 35,
     id: 23,
     name: "Ekans",
@@ -326,7 +326,7 @@ export const Data = [
   {
     attack: 100,
     defense: 110,
-    height: 18,
+    height: 15,
     hp: 75,
     id: 28,
     name: "Sandslash",
@@ -518,7 +518,7 @@ export const Data = [
   {
     attack: 65,
     defense: 70,
-    height: 8,
+    height: 16,
     hp: 60,
     id: 44,
     name: "Gloom",
@@ -530,7 +530,7 @@ export const Data = [
   {
     attack: 80,
     defense: 85,
-    height: 12,
+    height: 16,
     hp: 75,
     id: 45,
     name: "Vileplume",
@@ -674,7 +674,7 @@ export const Data = [
   {
     attack: 105,
     defense: 60,
-    height: 10,
+    height: 15,
     hp: 65,
     id: 57,
     name: "Primeape",
@@ -722,7 +722,7 @@ export const Data = [
   {
     attack: 65,
     defense: 65,
-    height: 13,
+    height: 16,
     hp: 65,
     id: 61,
     name: "Poliwhirl",
@@ -758,7 +758,7 @@ export const Data = [
   {
     attack: 35,
     defense: 30,
-    height: 13,
+    height: 16,
     hp: 40,
     id: 64,
     name: "Kadabra",
@@ -794,7 +794,7 @@ export const Data = [
   {
     attack: 100,
     defense: 70,
-    height: 15,
+    height: 16,
     hp: 80,
     id: 67,
     name: "Machoke",
@@ -830,7 +830,7 @@ export const Data = [
   {
     attack: 90,
     defense: 50,
-    height: 10,
+    height: 16,
     hp: 65,
     id: 70,
     name: "Weepinbell",
@@ -878,7 +878,7 @@ export const Data = [
   {
     attack: 80,
     defense: 100,
-    height: 4,
+    height: 5,
     hp: 40,
     id: 74,
     name: "Geodude",
@@ -890,7 +890,7 @@ export const Data = [
   {
     attack: 95,
     defense: 115,
-    height: 10,
+    height: 15,
     hp: 55,
     id: 75,
     name: "Graveler",
@@ -902,7 +902,7 @@ export const Data = [
   {
     attack: 120,
     defense: 130,
-    height: 14,
+    height: 15,
     hp: 80,
     id: 76,
     name: "Golem",
@@ -1058,7 +1058,7 @@ export const Data = [
   {
     attack: 105,
     defense: 75,
-    height: 12,
+    height: 16,
     hp: 105,
     id: 89,
     name: "Muk",
@@ -1082,7 +1082,7 @@ export const Data = [
   {
     attack: 95,
     defense: 180,
-    height: 15,
+    height: 16,
     hp: 50,
     id: 91,
     name: "Cloyster",
@@ -1142,7 +1142,7 @@ export const Data = [
   {
     attack: 48,
     defense: 45,
-    height: 10,
+    height: 12,
     hp: 60,
     id: 96,
     name: "Drowzee",
@@ -1178,7 +1178,7 @@ export const Data = [
   {
     attack: 130,
     defense: 115,
-    height: 13,
+    height: 16,
     hp: 55,
     id: 99,
     name: "Kingler",
@@ -1250,7 +1250,7 @@ export const Data = [
   {
     attack: 80,
     defense: 110,
-    height: 10,
+    height: 16,
     hp: 60,
     id: 105,
     name: "Marowak",
@@ -1478,7 +1478,7 @@ export const Data = [
   {
     attack: 50,
     defense: 35,
-    height: 14,
+    height: 16,
     hp: 65,
     id: 124,
     name: "Jynx",
@@ -1490,7 +1490,7 @@ export const Data = [
   {
     attack: 83,
     defense: 57,
-    height: 15,
+    height: 16,
     hp: 65,
     id: 125,
     name: "Electabuzz",
@@ -1502,7 +1502,7 @@ export const Data = [
   {
     attack: 95,
     defense: 57,
-    height: 15,
+    height: 16,
     hp: 65,
     id: 126,
     name: "Magmar",
@@ -1514,7 +1514,7 @@ export const Data = [
   {
     attack: 125,
     defense: 100,
-    height: 15,
+    height: 16,
     hp: 65,
     id: 127,
     name: "Pinsir",
@@ -1658,7 +1658,7 @@ export const Data = [
   {
     attack: 60,
     defense: 125,
-    height: 10,
+    height: 14,
     hp: 70,
     id: 139,
     name: "Omastar",
@@ -1682,7 +1682,7 @@ export const Data = [
   {
     attack: 115,
     defense: 105,
-    height: 13,
+    height: 16,
     hp: 60,
     id: 141,
     name: "Kabutops",
