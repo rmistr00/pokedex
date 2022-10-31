@@ -7,9 +7,9 @@ import { useState, useEffect } from "react";
 import trainer from "../trainer.png";
 
 function Search({ setLayer }) {
-  const [type, setType] = useState("fire");
-  const [stat, setStat] = useState("hp");
-  const [order, setOrder] = useState(true);
+  const [type, setType] = useState("grass");
+  const [stat, setStat] = useState("id");
+  const [order, setOrder] = useState(false);
   const [pokemons, setPokemons] = useState();
 
   useEffect(() => {
@@ -17,10 +17,10 @@ function Search({ setLayer }) {
   }, []);
 
   let height = (h) => {
-    if (h <= 15) {
-      return 100;
+    if (h <= 14) {
+      return 90;
     } else {
-      return h * 10;
+      return h * 9;
     }
   };
 
@@ -47,23 +47,50 @@ function Search({ setLayer }) {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="search">
-      <button
-        onClick={() => {
-          setLayer("home");
-        }}
-      >
-        home
-      </button>
+      <motion.div key={pokemons} id="pokemons">
+        <img src={trainer} id="poke-trainer" />
 
-      <button
-        onClick={() => {
-          setOrder(!order);
-        }}
-      >
-        order
-      </button>
+        {pokemons
+          ?.sort((a, b) => {
+            if (order) {
+              return b[stat] - a[stat];
+            } else {
+              return a[stat] - b[stat];
+            }
+          })
+          .map((x, i) => (
+            <motion.div
+              key={x.name}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+            >
+              <div className="poke-stat">{x[stat]}</div>
+              <motion.img
+                height={`${height(x.height)}px`}
+                loading="lazy"
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`}
+              />
+            </motion.div>
+          ))}
+      </motion.div>
+
+      <div id="stats">
+        <div className="name">STATS</div>
+        {stats.map((s) => (
+          <button
+            key={s}
+            onClick={() => {
+              setStat(s);
+            }}
+            className={stat == s ? "selected-stat" : ""}
+          >
+            {s}
+          </button>
+        ))}
+      </div>
 
       <div id="types">
+        <div className="name">TYPES</div>
         {[...new Set(Data.map((x) => x.type))].map((t) => (
           <button
             className={type == t ? "selected-type" : ""}
@@ -77,40 +104,23 @@ function Search({ setLayer }) {
         ))}
       </div>
 
-      <div id="types">
-        {stats.map((s) => (
-          <button
-            key={s}
-            onClick={() => {
-              setStat(s);
-            }}
-            className={stat == s ? "selected-stat" : ""}
-          >
-            {s}
-          </button>
-        ))}
+      <button
+        id="home"
+        onClick={() => {
+          setLayer("home");
+        }}
+      >
+        home
+      </button>
 
-        <div id="pokemons">
-          {pokemons
-            ?.sort((a, b) => {
-              if (order) {
-                return b[stat] - a[stat];
-              } else {
-                return a[stat] - b[stat];
-              }
-            })
-            .map((x, i) => (
-              <img
-                height={`${height(x.height)}px`}
-                style={{ margin: `${i + i * 40}px`, zIndex: `${-i}` }}
-                key={x.name}
-                loading="lazy"
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`}
-              />
-            ))}
-        </div>
-        <img src={trainer} id="poke-trainer" className="img-shadow" />
-      </div>
+      <button
+        id="order-pokemon"
+        onClick={() => {
+          setOrder(!order);
+        }}
+      >
+        order
+      </button>
     </motion.div>
   );
 }

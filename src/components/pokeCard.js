@@ -55,7 +55,6 @@ export const PokeCard = ({ pokemon }) => {
       <img
         src={trainer}
         id="poke-trainer"
-        className="img-shadow"
         style={{ height: `${height(pokemon?.height)}px` }}
       />
       <img

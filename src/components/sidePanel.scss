@@ -21,10 +21,10 @@
     box-sizing: border-box;
     overflow: hidden;
     &.selected-pokemon {
-      border: 5px solid #4caf50;
+      border: 7px solid #4caf50;
       padding: 5px;
-      transition: 0.3s;
-      box-shadow: var(--shadow);
+      transition: 0.1s;
+      // box-shadow: var(--inset-shadow);
     }
     img {
       width: 100%;
