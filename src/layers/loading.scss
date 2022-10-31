@@ -1,6 +1,5 @@
 #loading {
   color: white;
-  text-align: center;
   #pokeball {
     border-radius: 50%;
     width: 150px;
@@ -13,12 +12,11 @@
 
   #about {
     position: absolute;
-    bottom: 40px;
-    left: 0;
-    right: 0;
+    margin: 40px;
   }
 
   #app-name {
+    text-align: center;
     font-size: 60px;
     top: 40%;
     position: absolute;
@@ -39,7 +37,7 @@
 
   #start {
     color: white;
-    border: 5px solid white;
+    border: none;
     background: #4caf50;
     position: absolute;
     bottom: 120px;
@@ -48,10 +46,18 @@
     margin: auto;
     border-radius: 30px;
     font-family: var(--theme);
-    font-weight: bold;
     text-transform: uppercase;
     box-shadow: var(--shadow);
     left: 0;
     right: 0;
+  }
+  #bottom-line {
+    z-index: -10;
+    border-radius: 40px 40px 0 0;
+    height: 140px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    box-shadow: var(--inset-shadow);
   }
 }

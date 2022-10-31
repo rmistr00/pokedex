@@ -64,7 +64,6 @@ function Search({ setLayer }) {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <div className="poke-stat">{x[stat]}</div>
               <motion.img
                 height={`${height(x.height)}px`}
                 loading="lazy"
@@ -92,35 +91,43 @@ function Search({ setLayer }) {
       <div id="types">
         <div className="name">TYPES</div>
         {[...new Set(Data.map((x) => x.type))].map((t) => (
-          <button
-            className={type == t ? "selected-type" : ""}
+          <div
+            key={t}
+            className={`type ${type == t ? "selected-type" : ""}`}
             onClick={() => {
               type == t ? setType("") : setType(t);
             }}
-            key={t}
           >
+            <img
+              src={`https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${t}.png`}
+            />
             {t}
-          </button>
+          </div>
         ))}
       </div>
 
-      <button
-        id="home"
-        onClick={() => {
-          setLayer("home");
-        }}
-      >
-        home
-      </button>
+      <div id="bottom-bar">
+        <i
+          id="home"
+          onClick={() => {
+            setLayer("home");
+          }}
+          className="material-icons-round"
+        >
+          undo
+        </i>
 
-      <button
-        id="order-pokemon"
-        onClick={() => {
-          setOrder(!order);
-        }}
-      >
-        order
-      </button>
+        <i
+          id="order-pokemon"
+          style={{ transform: order ? "rotate(0deg)" : "rotate(180deg)" }}
+          onClick={() => {
+            setOrder(!order);
+          }}
+          className="material-icons-round"
+        >
+          arrow_circle_up
+        </i>
+      </div>
     </motion.div>
   );
 }

@@ -11,20 +11,16 @@ function Loading({ setLayer }) {
     let m = x.getMonth();
     let y = x.getFullYear();
 
-    let v = d + m + y;
-    v /= 10000;
+    let v = d / 100 + m / 10 + y;
+    v -= 2000;
+    v /= 100;
     v = v.toFixed(2);
-    console.log(v);
 
     return v;
   };
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="loading">
-      <div id="about">
-        Designed & Developed by <br />
-        Ronak Mistry
-      </div>
       <motion.img
         animate={{
           rotate: [0, 360],
@@ -39,10 +35,16 @@ function Loading({ setLayer }) {
       <div id="app-name">
         Pokédex<sub>ALPHA</sub>
       </div>
-      <div id="app-version">v {version()}</div>
       <button id="start" onClick={() => setLayer("home")}>
         start
       </button>
+      <div id="bottom-line">
+        <div id="about">
+          Designed & Developed by <br />
+          Ronak Mistry
+        </div>
+        <div id="app-version">v {version()}</div>
+      </div>
     </motion.div>
   );
 }
