@@ -95,6 +95,9 @@
     }
   }
   #poke-qr {
+    box-shadow: var(--inset-shadow);
+    padding: 20px;
+    border-radius: 30px;
     position: fixed;
     width: 150px;
     left: 0px;
