@@ -6,10 +6,16 @@ import { Data } from "../data";
 
 import pokeballDark from "../pokeball-dark.png";
 
+import { LS } from "../functions/local-storage";
+
+LS.init();
+
 export const SidePanel = ({ setPokemon, pokemon }) => {
-  const [caught, setCaught] = useState({
-    Bulbasaur: true,
-  });
+  const [caught, setCaught] = useState({});
+
+  useEffect(() => {
+    setCaught(LS.data.caught);
+  }, []);
 
   return (
     <div id="sidePanel" className="border">
@@ -24,6 +30,8 @@ export const SidePanel = ({ setPokemon, pokemon }) => {
               let n = {};
               n[x.name] = true;
               setCaught({ ...caught, ...n });
+              LS.data.caught = { ...LS.data.caught, ...n };
+              LS.save(LS.data);
               setPokemon(x);
             };
           }}

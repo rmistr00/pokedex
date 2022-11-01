@@ -25,12 +25,12 @@ function Home({ setLayer }) {
       <PokeCard pokemon={pokemon} />
       <SidePanel setPokemon={setPokemon} pokemon={pokemon} />
 
-      {/* <svg
+      <svg
         id="triangle"
         width="58"
         height="58"
         onClick={() => {
-          setLayer("loading");
+          setLayer("team");
         }}
       >
         <path
@@ -38,7 +38,7 @@ function Home({ setLayer }) {
           fill="#ffeb3b"
           d="M20.339745962156 8.6891108675447a10 10 0 0 1 17.320508075689 0l17.679491924311 30.621778264911a10 10 0 0 1 -8.6602540378444 15l-35.358983848622 0a10 10 0 0 1 -8.6602540378444 -15"
         ></path>
-      </svg> */}
+      </svg>
 
       <div
         id="poke-search"

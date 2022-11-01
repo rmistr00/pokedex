@@ -3,7 +3,8 @@
 
   #about {
     position: absolute;
-    margin: 20px;
+    margin: 10px;
+    text-align: right;
   }
 
   #app-name {
@@ -29,7 +30,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 20px;
+    margin: 10px;
   }
 
   #about-app {
@@ -100,7 +101,7 @@
     left: 0px;
     right: 0px;
     margin: auto;
-    top: 150px;
+    top: 140px;
     z-index: -10;
   }
 }
