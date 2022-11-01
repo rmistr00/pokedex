@@ -22,7 +22,7 @@ function App() {
     setLayer("loading");
   }, []);
 
-  return <div className="App">{layers[layer]}</div>;
+  return <div id="App">{layers[layer]}</div>;
 }
 
 export default App;

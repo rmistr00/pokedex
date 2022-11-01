@@ -1,9 +1,4 @@
 #search {
-  &:after {
-    content: "";
-    display: block;
-    height: 200px;
-  }
   button {
     border: none;
     border-radius: 20px;
@@ -44,13 +39,13 @@
   #stats,
   #types {
     text-align: center;
-    color: white;
     padding: 10px 20px;
+    padding-bottom: 0;
     border-radius: 20px;
 
     .name {
       font-size: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
     }
   }
 
@@ -64,7 +59,7 @@
       margin: 5px;
       transition: 0.3s;
       &.selected-stat {
-        background: #4caf50;
+        background: var(--green);
         color: white;
       }
     }
@@ -89,7 +84,7 @@
       transition: 0.3s;
 
       &.selected-type {
-        background: #4caf50;
+        background: var(--green);
         color: white;
       }
       img {
@@ -126,7 +121,9 @@
     margin: 10px 20px;
   }
   #filters {
-    max-height: 250px;
+    background: white;
+    padding: 2px 0 20px 0;
+    height: 250px;
     overflow: scroll;
     box-shadow: var(--inset-shadow);
     margin: 20px;

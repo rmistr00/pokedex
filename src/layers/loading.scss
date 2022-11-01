@@ -1,12 +1,6 @@
 #loading {
   color: white;
 
-  #about {
-    position: absolute;
-    margin: 10px;
-    text-align: right;
-  }
-
   #app-name {
     text-align: center;
     font-size: 50px;
@@ -26,14 +20,8 @@
     }
   }
 
-  #app-version {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-  }
-
   #about-app {
+    text-align: right;
     font-size: 12px;
     border-radius: 30px 0px 0px 30px;
     height: 200px;
@@ -45,8 +33,19 @@
     background: white;
     color: black;
     box-shadow: var(--shadow);
+
+    #about {
+      margin: 10px;
+    }
+
+    #app-version {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 10px;
+    }
   }
-  #bottom-left-line {
+  #corner-line {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -55,7 +54,7 @@
     border-radius: 0 30px 0px 0px;
     box-shadow: var(--inset-shadow);
   }
-  #bottom-right-line {
+  #about-line {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -64,7 +63,7 @@
     height: 300px;
     box-shadow: var(--inset-shadow);
   }
-  #top-left-line {
+  #name-line {
     position: fixed;
     width: 100%;
     height: 40px;

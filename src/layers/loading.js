@@ -21,9 +21,9 @@ function Loading({ setLayer }) {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="loading">
-      <div id="bottom-left-line" />
-      <div id="bottom-right-line" />
-      <div id="top-left-line" />
+      <div id="corner-line" />
+      <div id="about-line" />
+      <div id="name-line" />
 
       <img src={qr} id="poke-qr" />
 
