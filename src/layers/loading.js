@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import pokeball from "../pokeball.png";
+import qr from "../qr.png";
 
 import "./loading.scss";
 
@@ -21,26 +21,32 @@ function Loading({ setLayer }) {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="loading">
-      <motion.img
-        animate={{
-          rotate: [0, 360],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-        }}
-        id="pokeball"
-        src={pokeball}
-      />
+      <div id="bottom-left-line" />
+      <div id="bottom-right-line" />
+      <div id="top-left-line" />
+
+      <img src={qr} id="poke-qr" />
+
+      <div id="circle" className="border" onClick={() => setLayer("home")}>
+        <motion.div
+          animate={{
+            scale: 2.5,
+            opacity: [0, 1, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+          }}
+        />
+      </div>
+
       <div id="app-name">
         Pokédex<sub>ALPHA</sub>
       </div>
-      <button id="start" onClick={() => setLayer("home")}>
-        start
-      </button>
-      <div id="bottom-line">
+
+      <div id="about-app">
         <div id="about">
-          Designed & Developed by <br />
+          Designed & developed by <br />
           Ronak Mistry
         </div>
         <div id="app-version">v {version()}</div>

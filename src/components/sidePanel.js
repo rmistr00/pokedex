@@ -4,7 +4,13 @@ import { motion } from "framer-motion";
 
 import { Data } from "../data";
 
+import pokeballDark from "../pokeball-dark.png";
+
 export const SidePanel = ({ setPokemon, pokemon }) => {
+  const [caught, setCaught] = useState({
+    Bulbasaur: true,
+  });
+
   return (
     <div id="sidePanel" className="border">
       {Data?.map((x, i) => (
@@ -15,6 +21,9 @@ export const SidePanel = ({ setPokemon, pokemon }) => {
               i + 1
             }.png`;
             img.onload = () => {
+              let n = {};
+              n[x.name] = true;
+              setCaught({ ...caught, ...n });
               setPokemon(x);
             };
           }}
@@ -26,10 +35,13 @@ export const SidePanel = ({ setPokemon, pokemon }) => {
           key={x.name}
         >
           <img
+            className={caught[x.name] ? "caught" : ""}
             loading="lazy"
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-              i + 1
-            }.png`}
+            src={
+              caught[x.name]
+                ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`
+                : pokeballDark
+            }
           />
         </motion.div>
       ))}
