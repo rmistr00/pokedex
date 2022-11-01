@@ -73,37 +73,39 @@ function Search({ setLayer }) {
           ))}
       </motion.div>
 
-      <div id="stats">
-        <div className="name">STATS</div>
-        {stats.map((s) => (
-          <button
-            key={s}
-            onClick={() => {
-              setStat(s);
-            }}
-            className={stat == s ? "selected-stat" : ""}
-          >
-            {s}
-          </button>
-        ))}
-      </div>
+      <div id="filters">
+        <div id="stats">
+          <div className="name">STATS</div>
+          {stats.map((s) => (
+            <button
+              key={s}
+              onClick={() => {
+                setStat(s);
+              }}
+              className={stat == s ? "selected-stat" : ""}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
 
-      <div id="types">
-        <div className="name">TYPES</div>
-        {[...new Set(Data.map((x) => x.type))].map((t) => (
-          <div
-            key={t}
-            className={`type ${type == t ? "selected-type" : ""}`}
-            onClick={() => {
-              type == t ? setType("") : setType(t);
-            }}
-          >
-            <img
-              src={`https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${t}.png`}
-            />
-            {t}
-          </div>
-        ))}
+        <div id="types">
+          <div className="name">TYPES</div>
+          {[...new Set(Data.map((x) => x.type))].map((t) => (
+            <div
+              key={t}
+              className={`type ${type == t ? "selected-type" : ""}`}
+              onClick={() => {
+                type == t ? setType("") : setType(t);
+              }}
+            >
+              <img
+                src={`https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${t}.png`}
+              />
+              {t}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div id="bottom-bar">

@@ -1,9 +1,4 @@
 #search {
-  &:after {
-    content: "";
-    display: block;
-    height: 200px;
-  }
   button {
     border: none;
     border-radius: 20px;
@@ -26,6 +21,7 @@
     border-radius: 20px;
     width: calc(100% - 40px);
     margin: 20px;
+    margin-bottom: 10px;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -42,32 +38,38 @@
 
   #stats,
   #types {
-    box-shadow: var(--shadow);
-    margin: 20px;
+    text-align: center;
     padding: 10px 20px;
-    background: white;
-    border-radius: 20px 40px;
+    padding-bottom: 0;
+    border-radius: 20px;
 
     .name {
       font-size: 20px;
+      margin-bottom: 0px;
     }
   }
 
   #stats {
+    text-align: left;
     button {
+      color: black;
       background: white;
       box-shadow: 0px 0px 5px rgb(150, 150, 150);
       padding: 5px 10px;
       margin: 5px;
       transition: 0.3s;
       &.selected-stat {
-        background: green;
+        background: var(--green);
         color: white;
       }
     }
   }
   #types {
+    text-align: right;
+
     .type {
+      background: white;
+      color: black;
       padding: 5px 10px;
       margin: 5px;
       display: inline-block;
@@ -82,7 +84,7 @@
       transition: 0.3s;
 
       &.selected-type {
-        background: green;
+        background: var(--green);
         color: white;
       }
       img {
@@ -100,11 +102,11 @@
     border-radius: 30px 30px 0 0;
     width: 100%;
     background: white;
-    height: 80px;
+    height: 60px;
   }
 
   #home {
-    font-size: 50px;
+    font-size: 40px;
     background: none;
     position: absolute;
     left: 0;
@@ -112,11 +114,19 @@
     margin: 10px 20px;
   }
   #order-pokemon {
-    padding: 5px 10px;
-    font-size: 50px;
+    font-size: 40px;
     position: absolute;
     right: 0;
     bottom: 0;
     margin: 10px 20px;
+  }
+  #filters {
+    background: white;
+    padding: 2px 0 20px 0;
+    height: 250px;
+    overflow: scroll;
+    box-shadow: var(--inset-shadow);
+    margin: 20px;
+    border-radius: 20px;
   }
 }
