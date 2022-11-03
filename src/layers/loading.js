@@ -11,9 +11,9 @@ function Loading({ setLayer }) {
     let m = x.getMonth();
     let y = x.getFullYear();
 
-    let v = d / 100 + m / 10 + y;
+    let v = d / 4 + m / 2 + y;
     v -= 2000;
-    v /= 100;
+    v /= 10;
     v = v.toFixed(2);
 
     return v;

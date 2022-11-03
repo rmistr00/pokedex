@@ -76,60 +76,69 @@ function Search({ setLayer }) {
       <div id="filters">
         <div id="stats">
           <div className="name">STATS</div>
-          {stats.map((s) => (
-            <button
-              key={s}
-              onClick={() => {
-                setStat(s);
-              }}
-              className={stat == s ? "selected-stat" : ""}
-            >
-              {s}
-            </button>
-          ))}
+          <div className="container">
+            {stats.map((s) => (
+              <button
+                key={s}
+                onClick={() => {
+                  setStat(s);
+                }}
+                className={stat == s ? "selected-stat" : ""}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div id="types">
           <div className="name">TYPES</div>
-          {[...new Set(Data.map((x) => x.type))].map((t) => (
-            <div
-              key={t}
-              className={`type ${type == t ? "selected-type" : ""}`}
-              onClick={() => {
-                type == t ? setType("") : setType(t);
-              }}
-            >
-              <img
-                src={`https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${t}.png`}
-              />
-              {t}
-            </div>
-          ))}
+          <div className="container">
+            {[...new Set(Data.map((x) => x.type))].map((t) => (
+              <div
+                key={t}
+                className={`type ${type == t ? "selected-type" : ""}`}
+                onClick={() => {
+                  type == t ? setType("") : setType(t);
+                }}
+              >
+                <img
+                  src={`https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${t}.png`}
+                />
+                {t}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div id="bottom-bar">
-        <i
-          id="home"
-          onClick={() => {
-            setLayer("home");
+      <div id="circle" className="border" onClick={() => setLayer("home")}>
+        <motion.div
+          animate={{
+            scale: 2.5,
+            opacity: [0, 1, 0],
           }}
-          className="material-icons-round"
-        >
-          undo
-        </i>
-
-        <i
-          id="order-pokemon"
-          style={{ transform: order ? "rotate(0deg)" : "rotate(180deg)" }}
-          onClick={() => {
-            setOrder(!order);
+          transition={{
+            duration: 2,
+            repeat: Infinity,
           }}
-          className="material-icons-round"
-        >
-          arrow_circle_up
-        </i>
+        />
       </div>
+
+      <div id="corner-line" />
+
+      <div
+        id="order-pokemon"
+        onClick={() => {
+          setOrder(!order);
+        }}
+        className="material-symbols-outlined"
+      >
+        {order ? <i>chevron_left</i> : <i>chevron_right</i>}
+      </div>
+
+      <div id="pokemons-line"></div>
+      <div id="filters-line"></div>
     </motion.div>
   );
 }
