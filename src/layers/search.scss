@@ -8,51 +8,52 @@
 
   #poke-trainer {
     height: 90px;
-    position: absolute;
-    left: 0;
+    position: fixed;
+    left: 0px;
     right: 0;
-    top: 40px;
+    top: 60px;
     margin: auto;
+    z-index: -10;
   }
   #pokemons {
-    padding: 0 40px;
+    padding: 0 40px 0 80px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 20px;
+    height: 200px;
+    position: fixed;
     background: white;
     box-shadow: var(--inset-shadow);
-    border-radius: 20px;
-    width: calc(100% - 40px);
-    margin: 20px;
-    margin-bottom: 10px;
-    overflow-x: scroll;
+    border-radius: 30px;
     overflow-y: hidden;
+    overflow-x: scroll;
     white-space: nowrap;
-    box-sizing: border-box;
-
     div {
-      position: relative;
-      z-index: 20;
       display: inline-block;
-      text-align: center;
-      margin-left: -30px;
+      margin-left: -40px;
     }
   }
 
   #stats,
   #types {
     text-align: center;
-    padding: 10px 20px;
     padding-bottom: 0;
     border-radius: 20px;
 
     .name {
       font-size: 20px;
-      margin-bottom: 0px;
+      margin: 10px;
+      margin-left: 0;
     }
   }
 
   #stats {
-    text-align: left;
+    text-align: right;
+
     button {
       color: black;
+      font-size: 12px;
       background: white;
       box-shadow: 0px 0px 5px rgb(150, 150, 150);
       padding: 5px 10px;
@@ -98,35 +99,73 @@
   #bottom-bar {
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     box-shadow: var(--shadow);
     border-radius: 30px 30px 0 0;
-    width: 100%;
+    width: calc(100% - 80px);
     background: white;
-    height: 60px;
+    height: 80px;
   }
 
   #home {
     font-size: 40px;
-    background: none;
-    position: absolute;
+    position: fixed;
     left: 0;
+    box-shadow: var(--inset-shadow);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
     bottom: 0;
-    margin: 10px 20px;
+    margin: 20px 0;
   }
   #order-pokemon {
     font-size: 40px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 10px 20px;
+    position: fixed;
+    left: 0;
+    top: 250px;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: var(--inset-shadow);
+    color: white;
+    background: var(--green);
   }
   #filters {
     background: white;
-    padding: 2px 0 20px 0;
-    height: 250px;
+    position: fixed;
+    right: 0;
+    bottom: 30px;
+    width: 220px;
+    padding: 10px 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    height: calc(100% - 340px);
     overflow: scroll;
+    box-shadow: var(--shadow);
+    border-radius: 30px 0 0 30px;
+    .name {
+      text-align: left;
+    }
+  }
+
+  #pokemons-line {
+    position: fixed;
+    top: 0;
+    z-index: -10;
+    width: 100%;
+    height: 240px;
     box-shadow: var(--inset-shadow);
-    margin: 20px;
-    border-radius: 20px;
+    border-radius: 0 0 30px 30px;
+  }
+  #filters-line {
+    position: fixed;
+    right: 0;
+    border-radius: 30px 0 0 00px;
+    bottom: 0px;
+    width: 160px;
+    height: calc(100% - 270px);
+    box-shadow: var(--inset-shadow);
+    z-index: -5;
   }
 }
