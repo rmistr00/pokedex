@@ -35,8 +35,8 @@ export const SidePanel = ({ setPokemon, pokemon }) => {
               setPokemon(x);
             };
           }}
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           className={`pokemon-icon ${
             pokemon.name == x.name ? "selected-pokemon" : ""
           }`}

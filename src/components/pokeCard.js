@@ -42,12 +42,15 @@ export const PokeCard = ({ pokemon }) => {
         id="poke-art"
       />
       <div id="poke-stats">
-        {Object.keys(stats).map((s) => (
+        {Object.keys(stats).map((s, i) => (
           <div className="poke-max-stat" key={s}>
             <div className="stat-name"> {stats[s]}</div>
             <div
               className="poke-stat"
-              style={{ width: `${(pokemon[s] / 200) * 300}px` }}
+              style={{
+                width: `${(pokemon[s] / 200) * 300}px`,
+                transition: `${0.3 + i * 0.3}s`,
+              }}
             ></div>
           </div>
         ))}

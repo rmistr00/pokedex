@@ -30,7 +30,7 @@ function Home({ setLayer }) {
         width="58"
         height="58"
         onClick={() => {
-          setLayer("team");
+          setLayer("game");
         }}
       >
         <path
