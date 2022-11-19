@@ -15,6 +15,8 @@ function Team({ setLayer }) {
       </button>
       <div>profile</div>
       <div>team</div>
+      <div>explore</div>
+
       <div>battle</div>
     </motion.div>
   );

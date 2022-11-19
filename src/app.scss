@@ -9,6 +9,8 @@
   --green: #4caf50;
   --yellow: #ffeb3b;
   --blue: #2196f3;
+  --black: rgb(20, 20, 20);
+  --white: rgb(230, 230, 230);
 
   --primary-font: "Nunito", sans-serif;
 }
@@ -25,8 +27,6 @@ html,
 body {
   font-family: var(--primary-font);
   background: var(--red);
-  overscroll-behavior: contain;
-
   overscroll-behavior: contain;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   user-select: none;
