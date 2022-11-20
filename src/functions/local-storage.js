@@ -8,6 +8,8 @@ export const LS = {
       this.data = {
         caught: {
           Bulbasaur: true,
+          Charmander: true,
+          Squirtle: true,
         },
       };
       this.save(this.data);
