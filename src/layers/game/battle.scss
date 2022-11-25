@@ -1,0 +1,9 @@
+#battle {
+  box-shadow: var(--inset-shadow);
+  background: grey;
+  border-radius: 20px;
+  width: calc(100% - 40px);
+  margin: 20px;
+  height: 250px;
+  position: fixed;
+}
