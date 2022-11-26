@@ -43,8 +43,8 @@ function Game({ setLayer }) {
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      pokemonSprite(ctx, pokemon, mapPosition, player);
       mapSprite(ctx, map, mapPosition, player);
+      pokemonSprite(ctx, pokemon, mapPosition, player);
       playerSprite(ctx, player, frame, mapPosition, relativePosition);
 
       if (pokemonCollison(relativePosition, pokemon, player)) {
@@ -88,8 +88,12 @@ function Game({ setLayer }) {
 
       <div id="buttons">
         <div id="buttons-center"></div>
-        {battle ? (
-          <>
+        {battle && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             <button
               id="button-up"
               onClick={() => {
@@ -108,46 +112,51 @@ function Game({ setLayer }) {
             >
               RUN
             </button>
-          </>
-        ) : (
-          ["down", "up", "left", "right"].map((x) => (
-            <button
-              key={x}
-              id={`button-${x}`}
-              onContextMenu={(e) => {
-                e.preventDefault();
-              }}
-              onPointerDown={() => {
-                player.moving = true;
-                player.button = x;
-              }}
-              onPointerLeave={() => {
-                player.moving = false;
-                player.button = "";
-              }}
-            >
-              <i className="material-symbols-outlined">{`keyboard_arrow_${x}`}</i>
-            </button>
-          ))
+          </motion.div>
+        )}
+        {!battle && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            {["down", "up", "left", "right"].map((x) => (
+              <button
+                key={x}
+                id={`button-${x}`}
+                onContextMenu={(e) => {
+                  e.preventDefault();
+                }}
+                onPointerDown={() => {
+                  player.moving = true;
+                  player.button = x;
+                }}
+                onPointerLeave={() => {
+                  player.moving = false;
+                  player.button = "";
+                }}
+              >
+                <i className="material-symbols-outlined">{`keyboard_arrow_${x}`}</i>
+              </button>
+            ))}
+          </motion.div>
         )}
       </div>
 
-      {!battle && (
-        <svg
-          width="58"
-          height="58"
-          id="home-button"
-          onClick={() => {
-            setLayer("home");
-          }}
-        >
-          <path
-            stroke="none"
-            fill="#ffeb3b"
-            d="M20.339745962156 8.6891108675447a10 10 0 0 1 17.320508075689 0l17.679491924311 30.621778264911a10 10 0 0 1 -8.6602540378444 15l-35.358983848622 0a10 10 0 0 1 -8.6602540378444 -15"
-          ></path>
-        </svg>
-      )}
+      <svg
+        width="58"
+        height="58"
+        id="home-button"
+        onClick={() => {
+          setLayer("home");
+        }}
+      >
+        <path
+          stroke="none"
+          fill="#ffeb3b"
+          d="M20.339745962156 8.6891108675447a10 10 0 0 1 17.320508075689 0l17.679491924311 30.621778264911a10 10 0 0 1 -8.6602540378444 15l-35.358983848622 0a10 10 0 0 1 -8.6602540378444 -15"
+        ></path>
+      </svg>
 
       <div id="pokemons-line"></div>
     </motion.div>

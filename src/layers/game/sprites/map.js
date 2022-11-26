@@ -25,6 +25,7 @@ class X {
     this.map = map;
   }
   draw(ctx, mapPosition, player) {
+    ground(this.map, ctx, mapPosition, player);
     grass(this.map, ctx, mapPosition, player);
     rocks(this.map, ctx, mapPosition);
     flowers(this.map, ctx, mapPosition);
@@ -100,6 +101,31 @@ let rocks = (map, ctx, mapPosition) => {
       p.y + mapPosition.y,
       16,
       16
+    );
+  }
+};
+
+let groundPositions = [];
+let size = 40;
+for (let i = 0; i < size; i++) {
+  for (let j = 0; j < size; j++) {
+    groundPositions.push({ x: i, y: j });
+  }
+}
+
+let ground = (map, ctx, mapPosition, player) => {
+  for (let i = 0; i < groundPositions.length; i++) {
+    let p = groundPositions[i];
+    ctx.drawImage(
+      map.img,
+      0,
+      0,
+      16,
+      16,
+      p.x * 25 + mapPosition.x - 400,
+      p.y * 25 + mapPosition.y - 400,
+      26,
+      26
     );
   }
 };
