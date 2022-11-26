@@ -33,7 +33,7 @@ class Player {
 }
 
 let animate = (player, frame) => {
-  if (frame % 5 == 0) {
+  if (frame % 10 == 0) {
     player.frame += 1;
     if (player.frame > 3) {
       player.frame = 0;
