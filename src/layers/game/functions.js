@@ -19,8 +19,8 @@ export const loadSprite = (obj) => {
 
 export const pokemonCollison = (relativePosition, pokemon, player) => {
   if (
-    Math.abs(pokemon.x - relativePosition.x + player.x) < 25 &&
-    Math.abs(pokemon.y - relativePosition.y + player.y) < 25
+    Math.abs(pokemon.x - relativePosition.x + player.x) < 30 &&
+    Math.abs(pokemon.y - relativePosition.y + player.y) < 30
   ) {
     return true;
   } else {
@@ -31,6 +31,8 @@ export const pokemonCollison = (relativePosition, pokemon, player) => {
 export const spawnPokemon = (pokemon, size) => {
   pokemon = { ...pokemon, ...randomPosition(size) };
   pokemon.id = randomPokemon();
+  let img = new Image();
+  img.src = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemon.id}.gif?raw=true`;
   return pokemon;
 };
 

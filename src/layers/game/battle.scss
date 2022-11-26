@@ -1,9 +1,79 @@
 #battle {
   box-shadow: var(--inset-shadow);
-  background: grey;
+  background: url("https://i.pinimg.com/736x/89/04/3f/89043fb2d56b3583cce79efe1c3fb53d.jpg");
+  background-size: cover;
+  background-position: center;
   border-radius: 20px;
   width: calc(100% - 40px);
   margin: 20px;
   height: 250px;
   position: fixed;
+
+  #pokemon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: calc(100% - 20px);
+    width: calc(100% / 2 + 20px);
+    img {
+      transition: 0.3s;
+      &.attacked {
+        left: 60px;
+        bottom: 10px;
+        transform: rotate(20deg) !important;
+      }
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+  #trainer-pokemon {
+    transition: 0.3s;
+
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    &.attacked {
+      left: 60px;
+      bottom: 60px;
+    }
+  }
+
+  #pokemon-bar {
+    position: absolute;
+    background: white;
+    width: 200px;
+    box-shadow: var(--shadow);
+    height: 30px;
+    margin: 20px;
+    border-radius: 50px 10px 50px 10px;
+    #name {
+      font-size: 12px;
+      text-transform: uppercase;
+      position: absolute;
+      right: 8px;
+      top: 2px;
+    }
+    #health {
+      box-shadow: var(--inset-shadow);
+      height: 10px;
+      background: grey;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 0 20px 0 10px;
+      div {
+        border-radius: 0 20px 0 10px;
+        position: absolute;
+        height: 10px;
+        background: var(--green);
+        left: 0;
+        bottom: 0;
+        transition: 0.3s;
+      }
+    }
+  }
 }
