@@ -48,6 +48,21 @@ let animate = (player, frame) => {
 
 let move = (player, mapPosition, relativePosition) => {
   let distance = 3;
+
+  let limit = 300;
+  if (mapPosition.x > limit) {
+    mapPosition.x = limit;
+  }
+  if (mapPosition.x < -limit) {
+    mapPosition.x = -limit;
+  }
+  if (mapPosition.y > limit) {
+    mapPosition.y = limit;
+  }
+  if (mapPosition.y < -limit) {
+    mapPosition.y = -limit;
+  }
+
   if (player.button == "right") {
     mapPosition.x -= distance;
     relativePosition.x += distance;

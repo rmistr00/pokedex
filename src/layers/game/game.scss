@@ -85,11 +85,42 @@
   border-radius: 0 0 30px 30px;
 }
 
-#loading-pokeball {
+#battle-buttons {
+  box-shadow: var(--inset-shadow);
+  border-radius: 30px;
   position: fixed;
+  bottom: 100px;
   left: 0;
   right: 0;
-  width: 100px;
   margin: auto;
-  top: 100px;
+  height: 200px;
+  width: 200px;
+  button {
+    width: 160px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    margin-bottom: 0;
+    background: white;
+    color: black;
+    border: none;
+    height: 30px;
+    box-shadow: var(--shadow);
+    &:active {
+      box-shadow: var(--inset-shadow);
+    }
+  }
+}
+
+#run {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background: white;
+  border: none;
+  box-shadow: var(--shadow);
 }
