@@ -106,7 +106,7 @@ let rocks = (map, ctx, mapPosition) => {
 };
 
 let groundPositions = [];
-let size = 40;
+let size = 50;
 for (let i = 0; i < size; i++) {
   for (let j = 0; j < size; j++) {
     groundPositions.push({ x: i, y: j });

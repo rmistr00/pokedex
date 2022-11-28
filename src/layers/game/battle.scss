@@ -8,6 +8,7 @@
   margin: 20px;
   height: 250px;
   position: fixed;
+  overflow: hidden;
 
   #pokemon {
     position: absolute;
@@ -16,11 +17,27 @@
     height: calc(100% - 20px);
     width: calc(100% / 2 + 20px);
     img {
-      transition: 0.3s;
+      transition: 0.1s;
+      &.missed {
+        left: -100px;
+      }
       &.attacked {
-        left: 60px;
-        bottom: 10px;
+        left: 70px;
+        bottom: 30px;
+        opacity: 0 !important;
         transform: rotate(20deg) !important;
+      }
+      &.attack {
+        left: -80px;
+        bottom: -20px;
+        transform: rotate(-10deg) !important;
+      }
+      &.fainted {
+        transition: 1s;
+        left: 80px;
+        bottom: 20px;
+        opacity: 0 !important;
+        transform: rotate(90deg) !important;
       }
       position: absolute;
       left: 0;
@@ -31,25 +48,42 @@
     }
   }
   #trainer-pokemon {
-    transition: 0.3s;
+    transition: 0.1s;
 
     position: absolute;
     left: 50px;
     bottom: 50px;
+    &.missed {
+      left: 100px;
+    }
+    &.attack {
+      left: 80px;
+      bottom: 70px;
+    }
     &.attacked {
-      left: 60px;
-      bottom: 60px;
+      left: 30px;
+      bottom: 40px;
+      opacity: 0 !important;
+      transform: rotate(-10deg) !important;
+    }
+    &.fainted {
+      transition: 1s;
+      left: 20px;
+      bottom: 40px;
+      opacity: 0 !important;
+      transform: rotate(-90deg) !important;
     }
   }
 
-  #pokemon-bar {
+  #pokemon-bar,
+  #user-pokemon-bar {
     position: absolute;
     background: white;
     width: 200px;
     box-shadow: var(--shadow);
     height: 30px;
-    margin: 20px;
-    border-radius: 50px 10px 50px 10px;
+    top: 20px;
+    border-radius: 0px 10px 50px 0px;
     #name {
       font-size: 12px;
       text-transform: uppercase;
@@ -64,15 +98,35 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      border-radius: 0 20px 0 10px;
+      border-radius: 0 20px 0 0px;
+      overflow: hidden;
       div {
-        border-radius: 0 20px 0 10px;
+        border-radius: 0 20px 0 0px;
         position: absolute;
         height: 10px;
         background: var(--green);
         left: 0;
         bottom: 0;
         transition: 0.3s;
+      }
+    }
+  }
+  #user-pokemon-bar {
+    right: 0px;
+    bottom: 0px;
+    border-radius: 10px 0px 0px 50px;
+    top: unset;
+    bottom: 20px;
+    #name {
+      left: 8px;
+    }
+    #health {
+      left: unset;
+      right: 0;
+      border-radius: 20px 0px 0px 0px;
+      overflow: hidden;
+      div {
+        border-radius: 20px 0px 0px 0px;
       }
     }
   }

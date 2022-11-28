@@ -8,11 +8,6 @@ export default {
     frame: 0,
     button: "",
   },
-  pokemon: {
-    x: 0,
-    y: 0,
-    url: "https://github.com/PokeAPI/sprites/blob/master/sprites/items/poke-ball.png?raw=true",
-  },
   frame: 0,
   mapPosition: {
     x: 0,

@@ -9,26 +9,28 @@ import {
   resize,
   loadSprite,
   spawnPokemon,
-  pokemonCollison,
   init,
+  battleMove,
 } from "./functions";
 import { playerSprite } from "./sprites/player";
-import { pokemonSprite } from "./sprites/pokemon";
 import { mapSprite } from "./sprites/map";
 
 import { Battle } from "./battle";
 
-let { player, mapPosition, frame, pokemon, relativePosition, map } = data;
+let { player, mapPosition, frame, relativePosition, map } = data;
 
 function Game({ setLayer }) {
-  const [battle, setBattle] = useState(false);
+  const [battle, setBattle] = useState(true);
   const [currentPokemon, setCurrentPokemon] = useState();
   const canvasRef = useRef(null);
   const [hp, setHP] = useState(100);
+  const [userHP, setUserHP] = useState(100);
+  const [userMove, setUserMove] = useState();
+  const [chooseMove, setChooseMove] = useState(true);
 
+  //canvas
   useEffect(() => {
     loadSprite(player);
-    loadSprite(pokemon);
     loadSprite(map);
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -38,83 +40,116 @@ function Game({ setLayer }) {
     resize(canvas);
 
     init(relativePosition, player, canvas);
-    pokemon = spawnPokemon(pokemon, { width: 150, height: 150 });
 
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       mapSprite(ctx, map, mapPosition, player);
-      pokemonSprite(ctx, pokemon, mapPosition, player);
       playerSprite(ctx, player, frame, mapPosition, relativePosition);
-
-      if (pokemonCollison(relativePosition, pokemon, player)) {
-        player.moving = false;
-        player.button = "";
-        setBattle(true);
-      }
-
       frame += 1;
+
       animationFrameId = window.requestAnimationFrame(render);
     };
     render();
     return () => {
       window.cancelAnimationFrame(animationFrameId);
-      mapPosition.x = 0;
-      mapPosition.y = 0;
     };
   }, []);
 
+  // start battle
   useEffect(() => {
-    if (battle) {
-      setCurrentPokemon(pokemon);
+    let pokemon = spawnPokemon();
+    setCurrentPokemon(pokemon);
+
+    if (!battle) {
+      let seconds = Math.round(Math.random() * 10) * 1000;
+      if (seconds < 5000) {
+        seconds = 5000;
+      }
       setTimeout(() => {
-        pokemon = spawnPokemon(pokemon, { width: 150, height: 150 });
-      }, 500);
+        setBattle(true);
+        player.moving = false;
+      }, seconds);
     }
   }, [battle]);
+
+  //limit user moves
+  useEffect(() => {
+    if (!chooseMove) {
+      setTimeout(() => {
+        setChooseMove(true);
+      }, 300);
+    }
+  }, [chooseMove]);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="game">
       <canvas id="canvas" ref={canvasRef}></canvas>
 
+      {/* battle */}
       {battle && (
         <Battle
           setBattle={setBattle}
           hp={hp}
           setHP={setHP}
+          userHP={userHP}
+          setUserHP={setUserHP}
           pokemon={currentPokemon}
+          userMove={userMove}
         />
       )}
 
-      <div id="buttons">
-        <div id="buttons-center"></div>
-        {battle && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <button
-              id="button-up"
-              onClick={() => {
-                let x = Math.random(1) * 50;
-                setHP(hp - x);
-              }}
+      {/* battle buttons */}
+      {battle && (
+        <div id="battle-buttons">
+          {chooseMove && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
             >
-              ATK
-            </button>
-            <button
-              id="button-down"
-              onClick={() => {
-                setHP(100);
-                setBattle(false);
-              }}
-            >
-              RUN
-            </button>
-          </motion.div>
-        )}
-        {!battle && (
+              <button
+                id="attack"
+                onClick={() => {
+                  let x = battleMove({ name: "attack", accuracy: 70 });
+                  if (x.hit) {
+                    setUserMove("attack");
+                    setHP((hp) => hp - x.damage);
+                    setUserHP((userHP) => userHP + x.hp);
+                  } else {
+                    setUserMove("missed");
+                  }
+                  setTimeout(() => {
+                    setUserMove("");
+                  }, 100);
+
+                  setChooseMove(false);
+                }}
+              >
+                ATK
+              </button>
+            </motion.div>
+          )}
+        </div>
+      )}
+
+      {battle && (
+        <button
+          id="run"
+          onClick={() => {
+            setHP(100);
+            setUserHP(100);
+            setBattle(false);
+          }}
+        >
+          RUN
+        </button>
+      )}
+
+      {/* move buttons */}
+      {!battle && (
+        <div id="buttons">
+          <div id="buttons-center"></div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -140,8 +175,8 @@ function Game({ setLayer }) {
               </button>
             ))}
           </motion.div>
-        )}
-      </div>
+        </div>
+      )}
 
       <svg
         width="58"

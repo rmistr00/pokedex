@@ -1,0 +1,30 @@
+{
+  "todo": [],
+  "in-progress": [
+    {
+      "assignedTo": {
+        "name": "rmistr00"
+      },
+      "creation_time": "2022-11-27T09:25:32.944Z",
+      "description": {
+        "content": "attack \ncounter\nquick attack\n\n\nif miss +hp to other pokemon\n",
+        "mime": "text/markdown"
+      },
+      "id": "2",
+      "references": [],
+      "title": "battle"
+    }
+  ],
+  "testing": [],
+  "done": [
+    {
+      "assignedTo": {
+        "name": "rmistr00"
+      },
+      "creation_time": "2022-11-27T09:17:31.633Z",
+      "id": "1",
+      "references": [],
+      "title": "pokemon ai"
+    }
+  ]
+}
