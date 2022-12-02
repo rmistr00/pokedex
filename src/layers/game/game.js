@@ -5,28 +5,25 @@ import { motion } from "framer-motion";
 import "./game.scss";
 
 import data from "./data";
-import {
-  resize,
-  loadSprite,
-  spawnPokemon,
-  init,
-  battleMove,
-} from "./functions";
+import { resize, loadSprite, spawnPokemon, init } from "./functions";
 import { playerSprite } from "./sprites/player";
 import { mapSprite } from "./sprites/map";
 
 import { Battle } from "./battle";
+import { MoveButtons } from "./components/moveButtons";
+import { BattleButtons } from "./components/battleButtons";
 
 let { player, mapPosition, frame, relativePosition, map } = data;
 
 function Game({ setLayer }) {
-  const [battle, setBattle] = useState(true);
+  const [battle, setBattle] = useState(false);
   const [currentPokemon, setCurrentPokemon] = useState();
   const canvasRef = useRef(null);
   const [hp, setHP] = useState(100);
   const [userHP, setUserHP] = useState(100);
   const [userMove, setUserMove] = useState();
   const [chooseMove, setChooseMove] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
   //canvas
   useEffect(() => {
@@ -58,8 +55,10 @@ function Game({ setLayer }) {
 
   // start battle
   useEffect(() => {
-    let pokemon = spawnPokemon();
-    setCurrentPokemon(pokemon);
+    if (battle) {
+      let pokemon = spawnPokemon();
+      setCurrentPokemon(pokemon);
+    }
 
     if (!battle) {
       let seconds = Math.round(Math.random() * 10) * 1000;
@@ -72,15 +71,6 @@ function Game({ setLayer }) {
       }, seconds);
     }
   }, [battle]);
-
-  //limit user moves
-  useEffect(() => {
-    if (!chooseMove) {
-      setTimeout(() => {
-        setChooseMove(true);
-      }, 300);
-    }
-  }, [chooseMove]);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="game">
@@ -96,86 +86,38 @@ function Game({ setLayer }) {
           setUserHP={setUserHP}
           pokemon={currentPokemon}
           userMove={userMove}
+          battle={battle}
+          chooseMove={chooseMove}
+          setChooseMove={setChooseMove}
+          loaded={loaded}
+          setLoaded={setLoaded}
         />
       )}
 
-      {/* battle buttons */}
-      {battle && (
-        <div id="battle-buttons">
-          {chooseMove && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
-              <button
-                id="attack"
-                onClick={() => {
-                  let x = battleMove({ name: "attack", accuracy: 70 });
-                  if (x.hit) {
-                    setUserMove("attack");
-                    setHP((hp) => hp - x.damage);
-                    setUserHP((userHP) => userHP + x.hp);
-                  } else {
-                    setUserMove("missed");
-                  }
-                  setTimeout(() => {
-                    setUserMove("");
-                  }, 100);
-
-                  setChooseMove(false);
-                }}
-              >
-                ATK
-              </button>
-            </motion.div>
-          )}
-        </div>
-      )}
-
-      {battle && (
+      {battle && userHP > 0 && hp > 0 && (
         <button
           id="run"
           onClick={() => {
             setHP(100);
             setUserHP(100);
             setBattle(false);
+            setLoaded(false);
           }}
         >
           RUN
         </button>
       )}
 
-      {/* move buttons */}
-      {!battle && (
-        <div id="buttons">
-          <div id="buttons-center"></div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            {["down", "up", "left", "right"].map((x) => (
-              <button
-                key={x}
-                id={`button-${x}`}
-                onContextMenu={(e) => {
-                  e.preventDefault();
-                }}
-                onPointerDown={() => {
-                  player.moving = true;
-                  player.button = x;
-                }}
-                onPointerLeave={() => {
-                  player.moving = false;
-                  player.button = "";
-                }}
-              >
-                <i className="material-symbols-outlined">{`keyboard_arrow_${x}`}</i>
-              </button>
-            ))}
-          </motion.div>
-        </div>
+      {!battle && <MoveButtons player={player} />}
+
+      {battle && userHP > 0 && hp > 0 && loaded && (
+        <BattleButtons
+          setChooseMove={setChooseMove}
+          setHP={setHP}
+          setUserHP={setUserHP}
+          setUserMove={setUserMove}
+          chooseMove={chooseMove}
+        />
       )}
 
       <svg

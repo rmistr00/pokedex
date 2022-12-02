@@ -5,7 +5,11 @@ import "./battle.scss";
 
 import { useEffect, useState } from "react";
 
-import { battleMove } from "./functions";
+import { battleMove, hpColor } from "./functions";
+
+import pokeball from "../../pokeball-dark.png";
+
+import data from "./data.js";
 
 export const Battle = ({
   pokemon,
@@ -15,42 +19,53 @@ export const Battle = ({
   userHP,
   setUserHP,
   userMove,
+  loaded,
+  setLoaded,
 }) => {
   const [pokemonData, setPokemonData] = useState();
   const [userPokemonData, setUserPokemonData] = useState();
   const [move, setMove] = useState();
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 1000);
+  }, []);
+
   //pokemon AI
   useEffect(() => {
-    let seconds = Math.round(Math.random() * 3000);
-
     let pokemonAI;
 
-    if (hp <= 0 || userHP <= 0) {
-      clearInterval(pokemonAI);
-    } else {
-      pokemonAI = setInterval(() => {
-        let x = battleMove({ name: "attack", accuracy: 70 });
+    if (loaded) {
+      let seconds = Math.round(Math.random() * 2000);
 
-        if (x.hit) {
-          setMove("attack");
-          setUserHP((userHP) => userHP - x.damage);
-          setHP((hp) => hp + x.hp);
-        } else {
-          setMove("missed");
-        }
-        setTimeout(() => {
-          setMove("");
-        }, 100);
+      if (hp <= 0 || userHP <= 0) {
+        clearInterval(pokemonAI);
+      } else {
+        pokemonAI = setInterval(() => {
+          let m = Math.floor(Math.random() * 4);
+          let x = battleMove(data.battleMoves[m]);
 
-        seconds = Math.round(Math.random() * 3000);
-      }, seconds);
+          if (x.success) {
+            setMove(x.type);
+            setUserHP((userHP) => userHP - x.damage);
+            setHP((hp) => hp + x.hp);
+          } else {
+            setMove("missed");
+          }
+          setTimeout(() => {
+            setMove("");
+          }, 200);
+
+          seconds =
+            Math.round(Math.random() * 3000) + data.battleMoves[m].timer;
+        }, seconds);
+      }
     }
-
     return () => {
       clearInterval(pokemonAI);
     };
-  }, [hp, userHP]);
+  }, [hp, userHP, loaded]);
 
   //endbattle
   useEffect(() => {
@@ -59,13 +74,22 @@ export const Battle = ({
         setHP(100);
         setUserHP(100);
         setBattle(false);
+        setLoaded(false);
       }, 3000);
     };
     if (hp <= 0) {
+      setHP(0);
       endBattle();
     }
     if (userHP <= 0) {
+      setUserHP(0);
       endBattle();
+    }
+    if (hp > 100) {
+      setHP(100);
+    }
+    if (userHP > 100) {
+      setUserHP(100);
     }
   }, [hp, userHP]);
 
@@ -96,6 +120,20 @@ export const Battle = ({
       initial={{ opacity: 0, filter: "blur(20px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
     >
+      {!loaded && (
+        <motion.img
+          id="loading-pokeball"
+          src={pokeball}
+          animate={{
+            rotate: 360,
+          }}
+          transition={{
+            duration: 1,
+            repeat: Infinity,
+          }}
+        />
+      )}
+
       {pokemon && pokemonData && (
         <div id="pokemon">
           <motion.img
@@ -127,23 +165,36 @@ export const Battle = ({
         id="trainer-pokemon"
         src={`https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-v/black-white/animated/back/${25}.gif?raw=true`}
       />
-      {pokemonData && (
-        <div id="pokemon-bar">
+      {pokemonData && loaded && (
+        <motion.div
+          id="pokemon-bar"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: "ease" }}
+        >
           <div id="name">{pokemonData?.name}</div>
 
           <div id="health" style={{ width: 180 }}>
-            <div style={{ width: hp * 1.8 }}></div>
+            <div style={{ width: hp * 1.8, background: hpColor(hp) }}></div>
           </div>
-        </div>
+        </motion.div>
       )}
-      {userPokemonData && (
-        <div id="user-pokemon-bar">
+
+      {userPokemonData && loaded && (
+        <motion.div
+          id="user-pokemon-bar"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: "ease" }}
+        >
           <div id="name">{userPokemonData?.name}</div>
 
           <div id="health" style={{ width: 180 }}>
-            <div style={{ width: userHP * 1.8 }}></div>
+            <div
+              style={{ width: userHP * 1.8, background: hpColor(userHP) }}
+            ></div>
           </div>
-        </div>
+        </motion.div>
       )}
     </motion.div>
   );

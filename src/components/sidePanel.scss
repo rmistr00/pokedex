@@ -14,15 +14,14 @@
 
   .pokemon-icon {
     height: 60px;
-    width: 60px;
     border-radius: 50%;
     margin: 15px;
     text-align: center;
     box-sizing: border-box;
     overflow: hidden;
     &.selected-pokemon {
-      border: 5px solid #4caf50;
-      padding: 5px;
+      padding: 10px;
+      box-shadow: var(--inset-shadow);
       transition: 0.3s;
     }
     img {

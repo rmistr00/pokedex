@@ -34,7 +34,6 @@ export const PokeCard = ({ pokemon }) => {
       </div>
       <div id="poke-name">{pokemon?.name}</div>
       <motion.img
-        className="img-shadow"
         key={pokemon?.name}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

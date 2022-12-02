@@ -3,6 +3,16 @@ export const init = (relativePosition, player, canvas) => {
   player.y = canvas.height / 2 - 25;
   relativePosition.x = canvas.width / 2;
   relativePosition.y = canvas.height / 2;
+
+  preloadAssets();
+};
+
+let preloadAssets = () => {
+  let url =
+    "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/0032398f86ea753194c5eeba97eccda2-1627249600/ExportBackgroundnomoveclound/draw-a-pixel-pokemon-battle-background.gif";
+
+  let x = new Image();
+  x.src = url;
 };
 
 export const resize = (canvas) => {
@@ -62,24 +72,53 @@ const randomPokemon = () => {
 
 export const battleMove = (move) => {
   let hit = Math.random() < move.accuracy / 100;
-  let damage = () => {
-    return Math.round(Math.random() * 20);
+  let damage = (f) => {
+    return Math.round(Math.random() * (20 * f));
   };
-  let recover = () => {
-    return Math.round(Math.random() * 5);
+  let recover = (f) => {
+    return Math.round(Math.random() * (5 * f));
   };
   let x = {
     damage: 0,
     hp: 0,
-    hit: false,
+    success: false,
+    type: "",
   };
 
   if (hit) {
     if (move.name == "attack") {
-      x.damage = damage();
-      x.hp = recover();
-      x.hit = true;
+      x.damage = 15;
+      x.success = true;
+      x.type = "attack";
+    }
+    if (move.name == "counter") {
+      x.damage = 30;
+      x.success = true;
+      x.type = "attack";
+    }
+    if (move.name == "quick-attack") {
+      x.damage = 3;
+      x.success = true;
+      x.type = "attack";
+    }
+    if (move.name == "recover") {
+      x.hp = 20;
+      x.success = true;
+      x.type = "heal";
     }
   }
   return x;
+};
+
+export const hpColor = (hp) => {
+  let color;
+  if (hp > 60) {
+    color = "var(--green)";
+  } else if (hp > 30) {
+    color = "var(--yellow)";
+  } else {
+    color = "var(--red)";
+  }
+
+  return color;
 };
