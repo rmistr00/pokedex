@@ -1,6 +1,6 @@
 #battle {
   box-shadow: var(--inset-shadow);
-  background: url("https://i.pinimg.com/736x/89/04/3f/89043fb2d56b3583cce79efe1c3fb53d.jpg");
+  background: url("https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/0032398f86ea753194c5eeba97eccda2-1627249600/ExportBackgroundnomoveclound/draw-a-pixel-pokemon-battle-background.gif");
   background-size: cover;
   background-position: center;
   border-radius: 20px;
@@ -17,7 +17,7 @@
     height: calc(100% - 20px);
     width: calc(100% / 2 + 20px);
     img {
-      transition: 0.1s;
+      transition: 0.2s;
       &.missed {
         left: -100px;
       }
@@ -30,7 +30,7 @@
       &.attack {
         left: -80px;
         bottom: -20px;
-        transform: rotate(-10deg) !important;
+        transform: rotate(-20deg) !important;
       }
       &.fainted {
         transition: 1s;
@@ -48,7 +48,7 @@
     }
   }
   #trainer-pokemon {
-    transition: 0.1s;
+    transition: 0.2s;
 
     position: absolute;
     left: 50px;
@@ -59,12 +59,13 @@
     &.attack {
       left: 80px;
       bottom: 70px;
+      transform: rotate(20deg) !important;
     }
     &.attacked {
       left: 30px;
       bottom: 40px;
       opacity: 0 !important;
-      transform: rotate(-10deg) !important;
+      transform: rotate(-20deg) !important;
     }
     &.fainted {
       transition: 1s;
@@ -94,17 +95,15 @@
     #health {
       box-shadow: var(--inset-shadow);
       height: 10px;
-      background: grey;
+      background: white;
       position: absolute;
       left: 0;
       bottom: 0;
       border-radius: 0 20px 0 0px;
       overflow: hidden;
       div {
-        border-radius: 0 20px 0 0px;
         position: absolute;
         height: 10px;
-        background: var(--green);
         left: 0;
         bottom: 0;
         transition: 0.3s;
@@ -129,5 +128,15 @@
         border-radius: 20px 0px 0px 0px;
       }
     }
+  }
+
+  #loading-pokeball {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100px;
+    top: 0px;
+    bottom: 0;
   }
 }
