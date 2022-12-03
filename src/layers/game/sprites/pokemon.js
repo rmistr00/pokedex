@@ -12,8 +12,8 @@ class Pokemon {
       this.pokemon.img,
       mapPosition.x + this.pokemon.x - 15 + player.x,
       mapPosition.y + this.pokemon.y - 15 + player.y,
-      30,
-      30
+      50,
+      50
     );
   }
 }

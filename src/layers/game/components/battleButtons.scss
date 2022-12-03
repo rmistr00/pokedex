@@ -21,14 +21,13 @@
     border: none;
     box-shadow: var(--shadow);
     position: absolute;
-    padding: 5px 10px;
     border-radius: 10px;
     .name {
-      font-weight: bold;
+      font-size: 12px;
       position: absolute;
       top: 0;
       left: 0;
-      margin: 10px;
+      margin: 5px 10px;
     }
     .damage {
       position: absolute;

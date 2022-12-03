@@ -54,15 +54,6 @@ export const PokeCard = ({ pokemon }) => {
           </div>
         ))}
       </div>
-      <img
-        src={trainer}
-        id="poke-trainer"
-        style={{ height: `${height(pokemon?.height)}px` }}
-      />
-      <img
-        src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon?.name.toLowerCase()}.gif`}
-        id="poke-size"
-      />
     </div>
   );
 };

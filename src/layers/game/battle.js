@@ -11,6 +11,8 @@ import pokeball from "../../pokeball-dark.png";
 
 import data from "./data.js";
 
+import { LS } from "../../functions/local-storage";
+
 export const Battle = ({
   pokemon,
   setBattle,
@@ -37,14 +39,14 @@ export const Battle = ({
     let pokemonAI;
 
     if (loaded) {
-      let seconds = Math.round(Math.random() * 2000);
-
       if (hp <= 0 || userHP <= 0) {
         clearInterval(pokemonAI);
       } else {
+        let timer = Math.floor(Math.random() * 2000);
         pokemonAI = setInterval(() => {
-          let m = Math.floor(Math.random() * 4);
-          let x = battleMove(data.battleMoves[m]);
+          let pokeMoves = data.battleMoves;
+          let m = Math.floor(Math.random() * pokeMoves.length);
+          let x = battleMove(pokeMoves[m]);
 
           if (x.success) {
             setMove(x.type);
@@ -57,9 +59,8 @@ export const Battle = ({
             setMove("");
           }, 200);
 
-          seconds =
-            Math.round(Math.random() * 3000) + data.battleMoves[m].timer;
-        }, seconds);
+          timer = Math.floor(Math.random() * 2000);
+        }, timer);
       }
     }
     return () => {
@@ -75,10 +76,16 @@ export const Battle = ({
         setUserHP(100);
         setBattle(false);
         setLoaded(false);
-      }, 3000);
+      }, 2000);
     };
     if (hp <= 0) {
       setHP(0);
+
+      let n = {};
+      n[pokemon.id] = true;
+      LS.data.battled = { ...LS.data.battled, ...n };
+      LS.save(LS.data);
+
       endBattle();
     }
     if (userHP <= 0) {

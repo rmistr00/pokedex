@@ -1,15 +1,15 @@
 export const LS = {
   init() {
-    this.name = "pokedex-alpha";
+    this.name = "pokedex-alpha-beta";
     let data = JSON.parse(localStorage.getItem(this.name));
     if (data !== null) {
       this.data = data;
     } else {
       this.data = {
-        caught: {
-          Bulbasaur: true,
-          Charmander: true,
-          Squirtle: true,
+        battled: {
+          1: true,
+          4: true,
+          7: true,
         },
       };
       this.save(this.data);
