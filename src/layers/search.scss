@@ -31,9 +31,14 @@
     overflow-y: hidden;
     overflow-x: scroll;
     white-space: nowrap;
-    div {
-      display: inline-block;
-      margin-left: -40px;
+
+    .pokemon-imgs {
+      position: absolute;
+      bottom: 0;
+      div {
+        display: inline-block;
+        margin-left: -40px;
+      }
     }
   }
 

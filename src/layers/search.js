@@ -49,28 +49,29 @@ function Search({ setLayer }) {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="search">
       <motion.div key={pokemons} id="pokemons">
         <img src={trainer} id="poke-trainer" />
-
-        {pokemons
-          ?.sort((a, b) => {
-            if (order) {
-              return b[stat] - a[stat];
-            } else {
-              return a[stat] - b[stat];
-            }
-          })
-          .map((x, i) => (
-            <motion.div
-              key={x.name}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-            >
-              <motion.img
-                height={`${height(x.height)}px`}
-                loading="lazy"
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`}
-              />
-            </motion.div>
-          ))}
+        <div className="pokemon-imgs">
+          {pokemons
+            ?.sort((a, b) => {
+              if (order) {
+                return b[stat] - a[stat];
+              } else {
+                return a[stat] - b[stat];
+              }
+            })
+            .map((x, i) => (
+              <motion.div
+                key={x.name}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+              >
+                <motion.img
+                  height={`${height(x.height)}px`}
+                  loading="lazy"
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`}
+                />
+              </motion.div>
+            ))}
+        </div>
       </motion.div>
 
       <div id="filters">
@@ -103,6 +104,7 @@ function Search({ setLayer }) {
                 }}
               >
                 <img
+                  loading="lazy"
                   src={`https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${t}.png`}
                 />
                 {t}

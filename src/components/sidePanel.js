@@ -11,27 +11,22 @@ import { LS } from "../functions/local-storage";
 LS.init();
 
 export const SidePanel = ({ setPokemon, pokemon }) => {
-  const [caught, setCaught] = useState({});
+  const [battled, setBattled] = useState({});
 
   useEffect(() => {
-    setCaught(LS.data.caught);
+    setBattled(LS.data.battled);
   }, []);
 
   return (
     <div id="sidePanel" className="border">
       {Data?.map((x, i) => (
-        <motion.div
+        <motion.img
           onClick={() => {
             var img = new Image();
             img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
               i + 1
             }.png`;
             img.onload = () => {
-              let n = {};
-              n[x.name] = true;
-              setCaught({ ...caught, ...n });
-              LS.data.caught = { ...LS.data.caught, ...n };
-              LS.save(LS.data);
               setPokemon(x);
             };
           }}
@@ -41,17 +36,9 @@ export const SidePanel = ({ setPokemon, pokemon }) => {
             pokemon.name == x.name ? "selected-pokemon" : ""
           }`}
           key={x.name}
-        >
-          <img
-            className={caught[x.name] ? "caught" : ""}
-            loading="lazy"
-            src={
-              caught[x.name]
-                ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`
-                : pokeballDark
-            }
-          />
-        </motion.div>
+          loading="lazy"
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`}
+        />
       ))}
     </div>
   );

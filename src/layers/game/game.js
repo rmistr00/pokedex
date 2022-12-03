@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 import "./game.scss";
 
 import data from "./data";
-import { resize, loadSprite, spawnPokemon, init } from "./functions";
+import { resize, loadSprite, spawnPokemon, init, collison } from "./functions";
 import { playerSprite } from "./sprites/player";
 import { mapSprite } from "./sprites/map";
+import { pokemonSprite } from "./sprites/pokemon";
 
 import { Battle } from "./battle";
 import { MoveButtons } from "./components/moveButtons";
@@ -43,6 +44,7 @@ function Game({ setLayer }) {
 
       mapSprite(ctx, map, mapPosition, player);
       playerSprite(ctx, player, frame, mapPosition, relativePosition);
+
       frame += 1;
 
       animationFrameId = window.requestAnimationFrame(render);
@@ -75,7 +77,7 @@ function Game({ setLayer }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="game">
       <canvas id="canvas" ref={canvasRef}></canvas>
-
+      <div id="canvas-line" />
       {/* battle */}
       {battle && (
         <Battle

@@ -41,8 +41,10 @@ export const collison = (relativePosition, target, player) => {
 export const spawnPokemon = () => {
   let pokemon = {};
   pokemon.id = randomPokemon();
+  pokemon = { ...pokemon, ...randomPosition({ width: 100, height: 100 }) };
   let img = new Image();
-  img.src = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemon.id}.gif?raw=true`;
+  img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+  pokemon.img = img;
   return pokemon;
 };
 
@@ -100,11 +102,6 @@ export const battleMove = (move) => {
       x.damage = 3;
       x.success = true;
       x.type = "attack";
-    }
-    if (move.name == "recover") {
-      x.hp = 20;
-      x.success = true;
-      x.type = "heal";
     }
   }
   return x;
