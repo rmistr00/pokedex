@@ -2,7 +2,6 @@ import "./app.scss";
 
 import { useEffect, useState } from "react";
 
-import { motion } from "framer-motion";
 import Home from "./layers/home";
 import Loading from "./layers/loading";
 import Search from "./layers/search";
