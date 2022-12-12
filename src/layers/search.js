@@ -6,6 +6,8 @@ import { Data } from "../data";
 import { useState, useEffect } from "react";
 import trainer from "../trainer.png";
 
+import { CornerButton } from "./components/cornerButton";
+
 function Search({ setLayer }) {
   const [type, setType] = useState("grass");
   const [stat, setStat] = useState("id");
@@ -114,21 +116,6 @@ function Search({ setLayer }) {
         </div>
       </div>
 
-      <div id="circle" className="border" onClick={() => setLayer("home")}>
-        <motion.div
-          animate={{
-            scale: 2.5,
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-          }}
-        />
-      </div>
-
-      <div id="corner-line" />
-
       <div
         id="order-pokemon"
         onClick={() => {
@@ -141,6 +128,8 @@ function Search({ setLayer }) {
 
       <div id="pokemons-line"></div>
       <div id="filters-line"></div>
+
+      <CornerButton setLayer={setLayer} layer={"home"} />
     </motion.div>
   );
 }

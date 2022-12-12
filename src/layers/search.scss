@@ -53,6 +53,11 @@
       margin: 5px;
       margin-left: 0;
     }
+    .container {
+      box-shadow: var(--inset-shadow);
+      border-radius: 20px 0 0 20px;
+      padding: 5px;
+    }
   }
 
   #stats {
@@ -142,12 +147,14 @@
     background: var(--green);
   }
   #filters {
+    opacity: 0.9;
     background: white;
     position: fixed;
     right: 0;
     bottom: 30px;
     width: 220px;
     padding: 10px 20px;
+    padding-right: 0;
     padding-bottom: 20px;
     box-sizing: border-box;
     height: calc(100% - 340px);

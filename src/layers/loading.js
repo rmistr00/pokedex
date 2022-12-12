@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import qr from "../qr.png";
 
 import "./loading.scss";
+import { CornerButton } from "./components/cornerButton";
 
 function Loading({ setLayer }) {
   let version = () => {
@@ -21,24 +22,11 @@ function Loading({ setLayer }) {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="loading">
-      <div id="corner-line" />
       <div id="about-line" />
       <div id="name-line" />
 
       <img src={qr} id="poke-qr" />
-
-      <div id="circle" className="border" onClick={() => setLayer("home")}>
-        <motion.div
-          animate={{
-            scale: 2.5,
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-          }}
-        />
-      </div>
+      <CornerButton setLayer={setLayer} layer={"home"} />
 
       <div id="app-name">
         Pokédex<sub>ALPHA</sub>
