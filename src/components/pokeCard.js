@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./pokeCard.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
-import trainer from "../trainer.png";
-
 export const PokeCard = ({ pokemon }) => {
   let height = (h) => {
     if (h < 15) {

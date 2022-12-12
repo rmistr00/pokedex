@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 
 import { Data } from "../data";
 
-import pokeballDark from "../pokeball-dark.png";
-
 import { LS } from "../functions/local-storage";
 
 LS.init();

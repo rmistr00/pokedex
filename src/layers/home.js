@@ -6,6 +6,8 @@ import { PokeCard } from "../components/pokeCard";
 import { motion } from "framer-motion";
 import "./home.scss";
 
+import { CornerButton } from "./components/cornerButton";
+
 function Home({ setLayer }) {
   const [pokemon, setPokemon] = useState({
     attack: 49,
@@ -40,26 +42,8 @@ function Home({ setLayer }) {
         ></path>
       </svg>
 
-      <div
-        id="poke-search"
-        className="border"
-        onClick={() => {
-          setLayer("search");
-        }}
-      >
-        <motion.div
-          animate={{
-            scale: 2.5,
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-          }}
-        />
-      </div>
+      <CornerButton setLayer={setLayer} layer={"search"} />
 
-      <div id="poke-search-line" className="border" />
       <div id="poke-card-line" className="border" />
       <div id="side-panel-line" className="border" />
     </motion.div>
