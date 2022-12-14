@@ -18,6 +18,9 @@ class Player {
     if (this.player.moving) {
       move(this.player, mapPosition, relativePosition);
     }
+
+    ctx.save();
+
     ctx.drawImage(
       this.player.img,
       animate(this.player),
@@ -29,6 +32,8 @@ class Player {
       50,
       50
     );
+
+    ctx.restore();
   }
 }
 
@@ -48,20 +53,6 @@ let animate = (player, frame) => {
 
 let move = (player, mapPosition, relativePosition) => {
   let distance = 3;
-
-  let limit = 300;
-  if (mapPosition.x > limit) {
-    mapPosition.x = limit;
-  }
-  if (mapPosition.x < -limit) {
-    mapPosition.x = -limit;
-  }
-  if (mapPosition.y > limit) {
-    mapPosition.y = limit;
-  }
-  if (mapPosition.y < -limit) {
-    mapPosition.y = -limit;
-  }
 
   if (player.button == "right") {
     mapPosition.x -= distance;

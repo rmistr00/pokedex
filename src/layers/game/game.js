@@ -5,7 +5,14 @@ import { motion } from "framer-motion";
 import "./game.scss";
 
 import data from "./data";
-import { resize, loadSprite, spawnPokemon, init, collison } from "./functions";
+import {
+  resize,
+  loadSprite,
+  spawnPokemon,
+  spawnPokemons,
+  init,
+  collison,
+} from "./functions";
 import { playerSprite } from "./sprites/player";
 import { mapSprite } from "./sprites/map";
 import { pokemonSprite } from "./sprites/pokemon";
@@ -14,17 +21,17 @@ import { Battle } from "./battle";
 import { MoveButtons } from "./components/moveButtons";
 import { BattleButtons } from "./components/battleButtons";
 
-let { player, mapPosition, frame, relativePosition, map } = data;
+let { pokemons, player, mapPosition, frame, relativePosition, map } = data;
 
 function Game({ setLayer }) {
   const [battle, setBattle] = useState(false);
-  const [currentPokemon, setCurrentPokemon] = useState();
   const canvasRef = useRef(null);
   const [hp, setHP] = useState(100);
   const [userHP, setUserHP] = useState(100);
   const [userMove, setUserMove] = useState();
   const [chooseMove, setChooseMove] = useState(true);
   const [loaded, setLoaded] = useState(false);
+  const [pokemon, setPokemon] = useState();
 
   //canvas
   useEffect(() => {
@@ -33,16 +40,28 @@ function Game({ setLayer }) {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    let animationFrameId;
-
     resize(canvas);
 
     init(relativePosition, player, canvas);
 
+    pokemons = spawnPokemons();
+
+    let animationFrameId;
+
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      mapSprite(ctx, map, mapPosition, player);
+      mapSprite(ctx, map, mapPosition, canvas);
+
+      pokemons.forEach((x) => {
+        pokemonSprite(ctx, x, mapPosition, player, frame);
+        if (collison(relativePosition, x, player)) {
+          player.moving = false;
+          setPokemon(x);
+          setBattle(true);
+        }
+      });
+
       playerSprite(ctx, player, frame, mapPosition, relativePosition);
 
       frame += 1;
@@ -51,26 +70,15 @@ function Game({ setLayer }) {
     };
     render();
     return () => {
+      mapPosition = { x: 0, y: 0 };
+      frame = 0;
       window.cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
-  // start battle
   useEffect(() => {
-    if (battle) {
-      let pokemon = spawnPokemon();
-      setCurrentPokemon(pokemon);
-    }
-
     if (!battle) {
-      let seconds = Math.round(Math.random() * 10) * 1000;
-      if (seconds < 5000) {
-        seconds = 5000;
-      }
-      setTimeout(() => {
-        setBattle(true);
-        player.moving = false;
-      }, seconds);
+      pokemons = spawnPokemons();
     }
   }, [battle]);
 
@@ -86,7 +94,7 @@ function Game({ setLayer }) {
           setHP={setHP}
           userHP={userHP}
           setUserHP={setUserHP}
-          pokemon={currentPokemon}
+          pokemon={pokemon}
           userMove={userMove}
           battle={battle}
           chooseMove={chooseMove}
@@ -104,6 +112,7 @@ function Game({ setLayer }) {
             setUserHP(100);
             setBattle(false);
             setLoaded(false);
+            pokemons = spawnPokemons();
           }}
         >
           RUN

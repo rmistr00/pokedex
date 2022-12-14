@@ -15,9 +15,9 @@
   opacity: 0.9;
 
   .pokemon-icon {
-    width: 70px;
+    width: 60px;
     border-radius: 50%;
-    margin: 10px;
+    margin: 15px;
     margin-bottom: 0;
     text-align: center;
     box-sizing: border-box;
@@ -25,6 +25,7 @@
     &.selected-pokemon {
       transition: 0.3s;
       padding: 10px;
+      filter: brightness(0);
       box-shadow: var(--inset-shadow);
     }
   }

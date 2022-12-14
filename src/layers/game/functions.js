@@ -29,8 +29,8 @@ export const loadSprite = (obj) => {
 
 export const collison = (relativePosition, target, player) => {
   if (
-    Math.abs(target.x - relativePosition.x + player.x) < 30 &&
-    Math.abs(target.y - relativePosition.y + player.y) < 30
+    Math.abs(target.x - relativePosition.x + player.x + 25) < 30 &&
+    Math.abs(target.y - relativePosition.y + player.y + 25) < 30
   ) {
     return true;
   } else {
@@ -38,10 +38,14 @@ export const collison = (relativePosition, target, player) => {
   }
 };
 
+export const spawnPokemons = () => {
+  return [...Array(3)].map((x) => spawnPokemon());
+};
+
 export const spawnPokemon = () => {
   let pokemon = {};
   pokemon.id = randomPokemon();
-  pokemon = { ...pokemon, ...randomPosition({ width: 100, height: 100 }) };
+  pokemon = { ...pokemon, ...randomPosition({ width: 300, height: 300 }) };
   let img = new Image();
   img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
   pokemon.img = img;
@@ -89,12 +93,12 @@ export const battleMove = (move) => {
 
   if (hit) {
     if (move.name == "attack") {
-      x.damage = 15;
+      x.damage = move.damage;
       x.success = true;
       x.type = "attack";
     }
     if (move.name == "counter") {
-      x.damage = 30;
+      x.damage = move.damage;
       x.success = true;
       x.type = "attack";
     }

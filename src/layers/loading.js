@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import qr from "../qr.png";
@@ -6,19 +7,17 @@ import "./loading.scss";
 import { CornerButton } from "./components/cornerButton";
 
 function Loading({ setLayer }) {
-  let version = () => {
-    let x = new Date();
-    let d = x.getDay();
-    let m = x.getMonth();
-    let y = x.getFullYear();
+  const [version, setVersion] = useState();
 
-    let v = d / 4 + m / 2 + y;
-    v -= 2000;
-    v /= 10;
-    v = v.toFixed(2);
+  useEffect(() => {
+    let url = `https://api.github.com/repos/rmistr00/pokedex/stats/commit_activity`;
 
-    return v;
-  };
+    fetch(url)
+      .then((res) => res.json())
+      .then((result) => {
+        setVersion((result.length / 10).toFixed(2));
+      });
+  }, []);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="loading">
@@ -37,7 +36,7 @@ function Loading({ setLayer }) {
           Designed & developed by <br />
           Ronak Mistry
         </div>
-        <div id="app-version">v {version()}</div>
+        <div id="app-version">v {version}</div>
       </div>
     </motion.div>
   );
