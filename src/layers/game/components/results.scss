@@ -1,0 +1,17 @@
+#battle-results {
+  position: absolute;
+  background: white;
+  height: 40%;
+  width: 70%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 10px 30px 10px 30px;
+  box-shadow: var(--shadow);
+  div {
+    font-size: 30px;
+    margin: 20px;
+  }
+}

@@ -13,6 +13,9 @@ import data from "./data.js";
 
 import { LS } from "../../functions/local-storage";
 
+import { Results } from "./components/results";
+import { HpBars } from "./components/hpBars";
+
 export const Battle = ({
   pokemon,
   setBattle,
@@ -27,6 +30,7 @@ export const Battle = ({
   const [pokemonData, setPokemonData] = useState();
   const [userPokemonData, setUserPokemonData] = useState();
   const [move, setMove] = useState();
+  const [results, setResults] = useState();
 
   useEffect(() => {
     setTimeout(() => {
@@ -71,6 +75,7 @@ export const Battle = ({
   //endbattle
   useEffect(() => {
     let endBattle = () => {
+      setResults(true);
       setTimeout(() => {
         setHP(100);
         setUserHP(100);
@@ -172,37 +177,16 @@ export const Battle = ({
         id="trainer-pokemon"
         src={`https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-v/black-white/animated/back/${25}.gif?raw=true`}
       />
-      {pokemonData && loaded && (
-        <motion.div
-          id="pokemon-bar"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ type: "ease" }}
-        >
-          <div id="name">{pokemonData?.name}</div>
 
-          <div id="health" style={{ width: 180 }}>
-            <div style={{ width: hp * 1.8, background: hpColor(hp) }}></div>
-          </div>
-        </motion.div>
-      )}
+      <HpBars
+        pokemonData={pokemonData}
+        hp={hp}
+        userHP={userHP}
+        userPokemonData={userPokemonData}
+        loaded={loaded}
+      />
 
-      {userPokemonData && loaded && (
-        <motion.div
-          id="user-pokemon-bar"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ type: "ease" }}
-        >
-          <div id="name">{userPokemonData?.name}</div>
-
-          <div id="health" style={{ width: 180 }}>
-            <div
-              style={{ width: userHP * 1.8, background: hpColor(userHP) }}
-            ></div>
-          </div>
-        </motion.div>
-      )}
+      {(hp == 0 || userHP == 0) && <Results hp={hp} userHP={userHP} />}
     </motion.div>
   );
 };

@@ -76,61 +76,6 @@
     }
   }
 
-  #pokemon-bar,
-  #user-pokemon-bar {
-    opacity: 0.9 !important;
-    position: absolute;
-    background: white;
-    width: 200px;
-    box-shadow: var(--shadow);
-    height: 30px;
-    top: 20px;
-    border-radius: 0px 10px 50px 0px;
-    #name {
-      font-size: 12px;
-      text-transform: uppercase;
-      position: absolute;
-      right: 8px;
-      top: 2px;
-    }
-    #health {
-      box-shadow: var(--inset-shadow);
-      height: 10px;
-      background: white;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      border-radius: 0 20px 0 0px;
-      overflow: hidden;
-      div {
-        position: absolute;
-        height: 10px;
-        left: 0;
-        bottom: 0;
-        transition: 0.3s;
-      }
-    }
-  }
-  #user-pokemon-bar {
-    right: 0px;
-    bottom: 0px;
-    border-radius: 10px 0px 0px 50px;
-    top: unset;
-    bottom: 20px;
-    #name {
-      left: 8px;
-    }
-    #health {
-      left: unset;
-      right: 0;
-      border-radius: 20px 0px 0px 0px;
-      overflow: hidden;
-      div {
-        border-radius: 20px 0px 0px 0px;
-      }
-    }
-  }
-
   #loading-pokeball {
     position: absolute;
     left: 0;

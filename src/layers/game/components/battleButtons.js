@@ -37,8 +37,7 @@ export const BattleButtons = ({
           }}
         >
           <div className="name">{m.name}</div>
-          <div className="damage">DMG: {m.damage}</div>
-          <div className="accuracy">ACC: {m.accuracy}</div>
+          <div className="info">{m.info}</div>
         </button>
       ))}
     </div>
