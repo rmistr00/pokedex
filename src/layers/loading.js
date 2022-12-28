@@ -7,18 +7,6 @@ import "./loading.scss";
 import { CornerButton } from "./components/cornerButton";
 
 function Loading({ setLayer }) {
-  const [version, setVersion] = useState();
-
-  useEffect(() => {
-    let url = `https://api.github.com/repos/rmistr00/pokedex/stats/commit_activity`;
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((result) => {
-        setVersion((result.length / 10).toFixed(2));
-      });
-  }, []);
-
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="loading">
       <div id="about-line" />
@@ -36,7 +24,7 @@ function Loading({ setLayer }) {
           Designed & developed by <br />
           Ronak Mistry
         </div>
-        <div id="app-version">v {version}</div>
+        <div id="app-version">v {process.env.REACT_APP_VERSION}</div>
       </div>
     </motion.div>
   );

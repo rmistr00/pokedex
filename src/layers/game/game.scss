@@ -3,7 +3,7 @@
   width: calc(100% - 40px);
   margin: 20px;
   height: 250px;
-  position: fixed;
+  position: absolute;
   background: black;
 }
 #canvas-line {
@@ -19,7 +19,7 @@
 #buttons {
   box-shadow: var(--inset-shadow);
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   bottom: 100px;
   left: 0;
   right: 0;
@@ -77,15 +77,16 @@
 }
 
 #home-button {
-  position: fixed;
+  position: absolute;
   bottom: 20px;
   left: 20px;
   transform: rotate(-90deg);
   filter: drop-shadow(0px 0px 5px black);
+  cursor: pointer;
 }
 
 #pokemons-line {
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: -10;
   width: 100%;
@@ -95,7 +96,7 @@
 }
 
 #run {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   right: 0;
   margin: 20px;

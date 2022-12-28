@@ -25,12 +25,18 @@ i {
 
 html,
 body {
+  margin: 0;
   font-family: var(--primary-font);
-  background: #d50000;
   overscroll-behavior: contain;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   user-select: none;
+  background: #d50000;
 }
+
+:root {
+  overflow: hidden;
+}
+
 button {
   font-family: var(--primary-font);
 }
@@ -43,7 +49,7 @@ button {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   margin: 30px;
   box-shadow: var(--inset-shadow);
@@ -70,8 +76,8 @@ button {
   border-radius: 0 0 30px 0;
   height: calc(100% - 160px);
   width: calc(100% - 200px);
-  position: fixed;
-  z-index: -10;
+  position: absolute;
+  z-index: -20;
   box-shadow: var(--inset-shadow);
 }
 #poke-search-line {
@@ -80,12 +86,12 @@ button {
   border-bottom: 0;
   height: 70px;
   width: 70px;
-  position: fixed;
-  z-index: -10;
+  position: absolute;
+  z-index: -20;
   box-shadow: var(--inset-shadow);
 }
 #side-panel-line {
-  position: fixed;
+  position: absolute;
   z-index: -10;
   right: 0;
   width: 40px;
@@ -95,4 +101,44 @@ button {
   top: 240px;
   border-radius: 30px 0 0 0px;
   box-shadow: var(--inset-shadow);
+}
+
+#app-info {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  #App {
+    position: fixed;
+    height: 700px;
+    width: 400px;
+    box-shadow: var(--shadow);
+    top: 30px;
+    left: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #d50000;
+  }
+  :root {
+    background: rgb(230, 230, 230);
+  }
+
+  #app-info {
+    display: unset;
+    position: fixed;
+    right: 40px;
+    top: 30px;
+    span {
+      font-size: 25px;
+    }
+    ul {
+      font-size: 20px;
+      ul {
+        font-size: 15px;
+      }
+    }
+    .tech {
+      margin-left: 20px;
+    }
+  }
 }

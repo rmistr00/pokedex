@@ -26,11 +26,12 @@ const S = styled.div`
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     margin: 30px;
     box-shadow: var(--inset-shadow);
     background: #2196f3;
+    cursor: pointer;
 
     div {
       position: absolute;
@@ -48,7 +49,7 @@ const S = styled.div`
   }
 
   #corner-line {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     height: 70px;
