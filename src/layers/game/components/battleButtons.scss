@@ -1,7 +1,7 @@
 #battle-buttons {
   box-shadow: var(--inset-shadow);
   border-radius: 30px;
-  position: fixed;
+  position: absolute;
   bottom: calc(100% - 480px);
   left: 0;
   right: 0;
@@ -28,7 +28,6 @@
       top: 0;
       left: 0;
       margin: 5px 10px;
-      font-weight: bold;
     }
     .info {
       text-align: right;

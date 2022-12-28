@@ -21,7 +21,33 @@ function App() {
     setLayer("loading");
   }, []);
 
-  return <div id="App">{layers[layer]}</div>;
+  return (
+    <div id="App">
+      {layers[layer]}
+      <div id="app-info">
+        <span>FEATURES</span>
+        <ul>
+          Pokedex<ul>stats</ul>
+          Search<ul>filter by stat and type</ul>
+          Game<ul>battle wild pokemon</ul>
+        </ul>
+
+        <span>TECH</span>
+        {[
+          "React JS",
+          "Sass",
+          "Canvas API",
+          "Github",
+          "Netlify",
+          "PokéAPI v2",
+        ].map((x) => (
+          <div className="tech" key={x}>
+            {x}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default App;

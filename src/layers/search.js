@@ -50,7 +50,6 @@ function Search({ setLayer }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="search">
       <motion.div key={pokemons} id="pokemons">
-        <img src={trainer} id="poke-trainer" />
         <div className="pokemon-imgs">
           {pokemons
             ?.sort((a, b) => {
