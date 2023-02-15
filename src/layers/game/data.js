@@ -2,7 +2,7 @@ export default {
   player: {
     x: 0,
     y: 0,
-    url: "https://reliccastle.com/attachments/1716/",
+    url: "https://i.stack.imgur.com/gZ3c5.png",
     moving: false,
     direction: 0,
     frame: 0,
