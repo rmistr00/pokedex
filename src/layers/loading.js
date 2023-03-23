@@ -24,7 +24,7 @@ function Loading({ setLayer }) {
           Designed & developed by <br />
           Ronak Mistry
         </div>
-        <div id="app-version">v 1.2</div>
+        <div id="app-version">v 1.3</div>
       </div>
     </motion.div>
   );
