@@ -1,4 +1,7 @@
 export default {
+  battle: {
+    url: "https://github.com/rmistr00/pokedex/blob/beta/src/layers/game/assets/battle.webp?raw=true",
+  },
   search: {
     url: "https://github.com/rmistr00/pokedex/blob/beta/src/layers/game/assets/background.jpeg?raw=true",
   },
