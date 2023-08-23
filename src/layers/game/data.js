@@ -1,4 +1,7 @@
 export default {
+  search: {
+    url: "https://github.com/rmistr00/pokedex/blob/beta/src/layers/game/assets/background.jpeg?raw=true",
+  },
   player: {
     x: 0,
     y: 0,

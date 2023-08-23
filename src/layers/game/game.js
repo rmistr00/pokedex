@@ -35,8 +35,7 @@ function Game({ setLayer }) {
 
   //canvas
   useEffect(() => {
-    loadSprite(player);
-    loadSprite(map);
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
