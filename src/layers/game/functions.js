@@ -25,6 +25,10 @@ export const loadSprite = (obj) => {
   let x = new Image();
   x.src = obj.url;
   obj.img = x;
+
+  x.onload = () => {
+    console.log(x, "loaded");
+  };
 };
 
 export const collison = (relativePosition, target, player) => {

@@ -5,14 +5,7 @@ import { motion } from "framer-motion";
 import "./game.scss";
 
 import data from "./data";
-import {
-  resize,
-  loadSprite,
-  spawnPokemon,
-  spawnPokemons,
-  init,
-  collison,
-} from "./functions";
+import { resize, spawnPokemons, init, collison } from "./functions";
 import { playerSprite } from "./sprites/player";
 import { mapSprite } from "./sprites/map";
 import { pokemonSprite } from "./sprites/pokemon";
@@ -35,7 +28,6 @@ function Game({ setLayer }) {
 
   //canvas
   useEffect(() => {
-
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 

@@ -10,13 +10,14 @@ import { loadSprite } from "../layers/game/functions";
 
 import data from "../layers/game/data";
 
-let { player, map, search } = data;
+let { player, map, search, battle } = data;
 
 function Loading({ setLayer }) {
   useEffect(() => {
-    console.log("preload assets");
     loadSprite(player);
     loadSprite(map);
+    loadSprite(search);
+    loadSprite(battle);
   });
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="loading">
@@ -35,7 +36,7 @@ function Loading({ setLayer }) {
           Designed & developed by <br />
           Ronak Mistry
         </div>
-        <div id="app-version">v 1.3</div>
+        <div id="app-version">v 1.4</div>
       </div>
     </motion.div>
   );
