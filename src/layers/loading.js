@@ -6,7 +6,18 @@ import qr from "../qr.png";
 import "./loading.scss";
 import { CornerButton } from "./components/cornerButton";
 
+import { loadSprite } from "../layers/game/functions";
+
+import data from "../layers/game/data";
+
+let { player, map, search } = data;
+
 function Loading({ setLayer }) {
+  useEffect(() => {
+    console.log("preload assets");
+    loadSprite(player);
+    loadSprite(map);
+  });
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="loading">
       <div id="about-line" />
